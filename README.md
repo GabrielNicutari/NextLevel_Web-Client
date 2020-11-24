@@ -1,1 +1,1 @@
-NextLevel_Web-Client
+## The server side of "NextLevel" - eCommerce web application
