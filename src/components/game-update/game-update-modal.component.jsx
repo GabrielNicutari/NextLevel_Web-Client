@@ -1,6 +1,6 @@
 import React from 'react'
 import './game-update.styles.scss'
-import UpdateRecipe from './game-update.component.jsx'
+import UpdateGame from './game-update.component.jsx'
 
 export const UpdateModal= ({show, close, state}) => {
 
@@ -18,8 +18,8 @@ export const UpdateModal= ({show, close, state}) => {
             </div>
             <div className="modal-content">
                 <div className="modal-body">
-                    <div className="headline">Update selected recipe</div>
-                    <UpdateRecipe state={state} close={close}/>
+                    <div className="headline">Update the game</div>
+                    <UpdateGame state={state} close={close}/>
                 </div>
                 <div className="modal-footer">
                     <button onClick={close} className="btn-small btn-cancel">Close</button>

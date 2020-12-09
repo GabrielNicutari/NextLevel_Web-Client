@@ -3,70 +3,84 @@ import http from '../../services/http.service';
 import './game-update.styles.scss';
 import { withRouter } from 'react-router-dom';
 
-class UpdateRecipe extends Component {
+class UpdateGame extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
             id: null,
-            name: "",
+            title: "",
             description: "",
-            author: "",
-            prepTime: 0,
-            cookTime: 0,
-            portions: 0,
-            instructions: "",
-            iconSrc: "",
-            imageSrc: "",
-            recipeHasIngredientsById: []
+            releaseDate: "",
+            developer: "",
+            publisher: "",
+            engine: "",
+            price: "",
+            review: "",
+            posterUrl: "",
+            coverUrl: "",
+            trailerUrl: "",
+            adUrl: "",
+            gameHasFieldsById: []
         };
     }
 
     componentDidMount() {
         this.setState(this.props.state);
     }
-
-    onChangeName = e => {
-        this.setState({name: e.target.value});
+    onChangeTitle = e => {
+        this.setState({title: e.target.value});
     }
 
-   onChangeDescription = e => {
+    onChangeDescription = e => {
         this.setState({description: e.target.value});
-   }
-
-    onChangeAuthor = e => {
-        this.setState({author: e.target.value})
     }
 
-    onChangePrepTime = e => {
-        this.setState({prepTime: e.target.value})
+    onChangeReleaseDate = e => {
+        this.setState({releaseDate: e.target.value})
     }
 
-    onChangeCookTime = e => {
-        this.setState({cookTime: e.target.value})
+    onChangeDeveloper = e => {
+        this.setState({developer: e.target.value})
     }
 
-    onChangePortions = e => {
-        this.setState({portions: e.target.value})
+    onChangePublisher = e => {
+        this.setState({publisher: e.target.value})
     }
 
-    onChangeInstructions = e => {
-        this.setState({instructions: e.target.value})
+    onChangeEngine = e => {
+        this.setState({engine: e.target.value})
     }
 
-    onChangeIconSrc =  e => {
-        this.setState({iconSrc: e.target.value})
+    onChangePrice = e => {
+        this.setState({price: e.target.value})
     }
 
-    onChangeImageSrc = e => {
-        this.setState({imageSrc: e.target.value})
+    onChangeReview = e => {
+        this.setState({review: e.target.value})
     }
 
-    updateRecipe = () => {
+    onChangePosterUrl =  e => {
+        this.setState({posterUrl: e.target.value})
+    }
+
+    onChangeCoverUrl = e => {
+        this.setState({coverUrl: e.target.value})
+    }
+
+    onChangeTrailerUrl = e => {
+        this.setState({trailerUrl: e.target.value})
+    }
+
+    onChangeAdUrl = e => {
+        this.setState({adUrl: e.target.value})
+    }
+
+    saveGame = () => {
 
         http
             .put(
-                "/recipes/update/" + this.state.id,
+                "/games/update/" + this.state.id,
                 this.state
             )
             .then((response) => {
@@ -79,6 +93,7 @@ class UpdateRecipe extends Component {
 
     afterSubmission = (event) => {
         event.preventDefault();
+        this.saveGame();
     }
 
     render() {
@@ -89,91 +104,119 @@ class UpdateRecipe extends Component {
                 <form onSubmit={this.afterSubmission}>
                     <div className="field1-2">
                         <div>
-                            <label>Name</label><br/>
+                            <label>Title</label><br/>
                             <input
-                                type="text" id="name" required value={this.state.name}
-                                onChange={this.onChangeName} name="name"
+                                type="text" id="title" required value={this.state.title}
+                                onChange={this.onChangeTitle} name="title"
                             />
                         </div>
+
                         <div>
-                            <label>Author</label><br/>
-                            <input
-                                type="text" id="author" required
-                                value={this.state.author} onChange={this.onChangeAuthor} name="author"
+                            <label>Description: </label><br/>
+                            <textarea className="text-box"
+                                      placeholder="Game Description"
+                                      value={this.state.description} onChange={this.onChangeDescription}
+                                      id="description" name="description"
                             />
                         </div>
                     </div>
 
-                    <div>
-                        <label>Description: </label><br/>
-                        <textarea
-                            placeholder="Recipe Description" rows={5} cols={50}
-                            value={this.state.description} onChange={this.onChangeDescription}
-                            id="description" name="description"
-                        />
-                    </div>
 
                     <div className="field4-5-6">
+
                         <div>
-                            <label>Prep Time: </label><br/>
+                            <label>ReleaseDate</label><br/>
+                            <input
+                                type="date" id="releaseDate" required
+                                value={this.state.releaseDate} onChange={this.onChangeReleaseDate} name="releaseDate"
+                            />
+                        </div>
+                        <div>
+                            <label>Review: </label><br/>
                             <input
                                 type="number" min={0} step={1} required
-                                value={this.state.prepTime} onChange={this.onChangePrepTime}
-                                name="prepTime" id="prepTime"
+                                value={this.state.review} onChange={this.onChangeReview}
+                                name="review" id="review"
                             />
                         </div>
 
                         <div>
-                            <label>Cook Time: </label><br/>
+                            <label>Price: </label><br/>
                             <input
-                                type="number" min={0} step={1} required
-                                value={this.state.cookTime} onChange={this.onChangeCookTime}
-                                id="cookTime" name="cookTime"
-                            />
-                        </div>
-
-                        <div>
-                            <label>Portions: </label><br/>
-                            <input
-                                type="number" min={0} step={1} required
-                                value={this.state.portions} onChange={this.onChangePortions}
-                                id="portions" name="portions"
+                                type="number" min={0} step={0.01} required
+                                value={this.state.price} onChange={this.onChangePrice}
+                                id="price" name="price"
                             />
                         </div>
                     </div>
 
-                    <div className="instructionse">
-                        <label>Instructions: </label><br/>
-                        <textarea
-                            placeholder="Recipe Instructions" rows={15  } cols={50}
-                            id="instructions" name="instructions" required
-                            value={this.state.instructions} onChange={this.onChangeInstructions}
-
+                    <div className="developer">
+                        <label>Developer: </label><br/>
+                        <textarea className="text-box"
+                                  placeholder="Game Developer"
+                                  id="developer" name="developer" required
+                                  value={this.state.developer} onChange={this.onChangeDeveloper}
                         />
                     </div>
-                    <div className="url-source">
-                        <label>Icon Source: </label><br/>
+
+                    <div className="publisher">
+                        <label>Publisher: </label><br/>
+                        <textarea className="text-box"
+                                  placeholder="Game Publisher"
+                                  id="publisher" name="publisher" required
+                                  value={this.state.publisher} onChange={this.onChangePublisher}
+                        />
+                    </div>
+
+                    <div className="engine">
+                        <label>Engine: </label><br/>
+                        <textarea className="text-box"
+                                  placeholder="Game Engine"
+                                  id="engine" name="engine" required
+                                  value={this.state.engine} onChange={this.onChangeEngine}
+                        />
+                    </div>
+
+
+                    <div className="poster-url">
+                        <label>Poster Url: </label><br/>
                         <input
-                            type="text" id="iconSrc" name="iconSrc" required
-                            value={this.state.iconSrc} onChange={this.onChangeIconSrc}
+                            type="text" id="posterUrl" name="posterUrl" required
+                            value={this.state.posterUrl} onChange={this.onChangePosterUrl}
                         />
                     </div>
-                    <div className="url-source">
-                        <label>Image Source: </label><br/>
+                    <div className="cover-url">
+                        <label>Cover Url: </label><br/>
                         <input
-                            type="text" id="imgSrc" name="imgSrc" required
-                            value={this.state.imageSrc} onChange={this.onChangeImageSrc}
+                            type="text" id="coverUrl" name="coverUrl" required
+                            value={this.state.coverUrl} onChange={this.onChangeCoverUrl}
                         />
                     </div>
 
-                    <button className="btn-small btn-submit" onClick={() => {this.updateRecipe(); this.props.close()}} type="submit">
+                    <div className="trailer-url">
+                        <label>Trailer Url: </label><br/>
+                        <input
+                            type="text" id="trailerUrl" name="trailerUrl" required
+                            value={this.state.trailerUrl} onChange={this.onChangeTrailerUrl}
+                        />
+                    </div>
+
+                    <div className="trailer-url">
+                        <label>Ad Url: </label><br/>
+                        <input
+                            type="text" id="adUrl" name="adUrl"
+                            value={this.state.adUrl} onChange={this.onChangeAdUrl}
+                        />
+                    </div>
+
+                    <button className="btn-small btn-submit" type="submit" onClick={this.props.close}>
                         Submit
                     </button>
 
-                    </form>
+                </form>
             </div>
         );
     }
 }
 
-export default withRouter(UpdateRecipe);
+export default withRouter(UpdateGame);

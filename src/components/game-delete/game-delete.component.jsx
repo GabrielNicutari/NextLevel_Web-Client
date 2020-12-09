@@ -32,6 +32,7 @@ class DeleteGame extends Component {
 
     afterSubmission = (event) => {
         event.preventDefault();
+        this.deleteGame();
     }
 
     render() {
@@ -40,7 +41,7 @@ class DeleteGame extends Component {
             <div className='container'>
 
                 <form onSubmit={this.afterSubmission}>
-                    <button className="btn-small btn-submit" onClick={() => {this.deleteGame(); this.props.close()}} type="submit">
+                    <button className="btn-small btn-submit" onClick={this.props.close} type="submit">
                         Yes, delete
                     </button>
 
