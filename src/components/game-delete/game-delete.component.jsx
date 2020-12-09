@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
 import http from '../../services/http.service';
 import './game-delete.styles.scss';
+import { withRouter } from 'react-router-dom';
 
-export default class DeleteRecipe extends Component {
+class DeleteGame extends Component {
     constructor(props) {
         super(props);
 
@@ -15,18 +16,22 @@ export default class DeleteRecipe extends Component {
         this.setState(this.props.state);
     }
 
-    deleteRecipe = () => {
+    deleteGame = () => {
 
         http
             .delete(
-                "/recipes/delete/" + this.state.id
+                "/games/delete/" + this.state.id
             )
             .then((response) => {
-                this.props.history.push("/recipes/delete/" + this.state.id);
+                this.props.history.push("/games/");
             })
             .catch((e) => {
                 console.log(e);
             });
+    }
+
+    afterSubmission = (event) => {
+        event.preventDefault();
     }
 
     render() {
@@ -34,8 +39,8 @@ export default class DeleteRecipe extends Component {
         return(
             <div className='container'>
 
-                <form>
-                    <button className="btn-small btn-submit" onClick={this.deleteRecipe} type="submit">
+                <form onSubmit={this.afterSubmission}>
+                    <button className="btn-small btn-submit" onClick={() => {this.deleteGame(); this.props.close()}} type="submit">
                         Yes, delete
                     </button>
 
@@ -45,3 +50,5 @@ export default class DeleteRecipe extends Component {
         );
     }
 }
+
+export default withRouter(DeleteGame);

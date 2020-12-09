@@ -4,7 +4,8 @@
     <list default="true" id="25d1764b-0ccc-4da2-b3d6-57ab9ae9c0be" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/game-create/game-create.component.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/game-create/game-create.component.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/game-delete/game-delete-modal.component.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/game-delete/game-delete-modal.component.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/game-delete/game-delete.component.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/game-delete/game-delete.component.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +58,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1607480091081</updated>
-      <workItem from="1607480092756" duration="8976000" />
+      <workItem from="1607480092756" duration="9500000" />
     </task>
     <servers />
   </component>
