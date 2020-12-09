@@ -36,27 +36,29 @@ a {
 //BUTTONS LAYOUT------------------------------------------------------------------------------------------------------//
 
 .btn-small {
-  background: linear-gradient(
-    273.91deg,
-    #ffdd94 1.04%,
-    rgba(255, 230, 176, 0.8) 98.54%
-  );
+  // background: linear-gradient(
+  //   273.91deg,
+  //   #ffdd94 1.04%,
+  //   rgba(255, 230, 176, 0.8) 98.54%
+  // );
+  background: white;
   border-radius: 4px;
   border: none;
   outline: none;
   cursor: pointer;
 
   &:hover {
-    background: #fec13e;
+    background: #e72510;
   }
 }
 
 .btn-mini {
-  background: linear-gradient(
-    273.91deg,
-    #ffdd94 1.04%,
-    rgba(255, 230, 176, 0.8) 98.54%
-  );
+  // background: linear-gradient(
+  //   273.91deg,
+  //   #ffdd94 1.04%,
+  //   rgba(255, 230, 176, 0.8) 98.54%
+  // );
+  background: white;
   border-radius: 4px;
 
   width: 115px;
@@ -71,11 +73,11 @@ a {
   color: #000000;
 
   &:hover {
-    background: #fec13e;
+    background: #e72510;
   }
 
   &:active {
-    background: #fec13e;
+    background: #e72510;
   }
 
   @media screen and (min-width: 608px) {
@@ -92,11 +94,12 @@ a {
 }
 
 .btn-small {
-  background: linear-gradient(
-    273.91deg,
-    #ffdd94 1.04%,
-    rgba(255, 230, 176, 0.8) 98.54%
-  );
+  // background: linear-gradient(
+  //   273.91deg,
+  //   #ffdd94 1.04%,
+  //   rgba(255, 230, 176, 0.8) 98.54%
+  // );
+  background: white;
   border-radius: 4px;
 
   width: 115px;
@@ -111,11 +114,11 @@ a {
   color: #000000;
 
   &:hover {
-    background: #fec13e;
+    background: #e72510;
   }
 
   &:active {
-    background: #fec13e;
+    background: #e72510;
   }
 
   @media screen and (min-width: 608px) {
@@ -132,11 +135,12 @@ a {
 }
 
 .btn-medium {
-  background: linear-gradient(
-    273.91deg,
-    #ffdd94 1.04%,
-    rgba(255, 230, 176, 0.8) 98.54%
-  );
+  // background: linear-gradient(
+  //   273.91deg,
+  //   #ffdd94 1.04%,
+  //   rgba(255, 230, 176, 0.8) 98.54%
+  // );
+  background: white;
   border-radius: 4px;
   border: none;
   outline: none;
@@ -154,11 +158,11 @@ a {
   color: #000000;
 
   &:hover {
-    background: #fec13e;
+    background: #e72510;
   }
 
   &:active {
-    background: #fec13e;
+    background: #e72510;
   }
 
   @media screen and (min-width: 0px) {
@@ -181,11 +185,12 @@ a {
 }
 
 .btn-large {
-  background: linear-gradient(
-    273.91deg,
-    #ffdd94 1.04%,
-    rgba(255, 230, 176, 0.8) 98.54%
-  );
+  // background: linear-gradient(
+  //   273.91deg,
+  //   #ffdd94 1.04%,
+  //   rgba(255, 230, 176, 0.8) 98.54%
+  // );
+  background: white;
   border-radius: 4px;
   border: none;
   outline: none;
@@ -203,11 +208,11 @@ a {
   color: #000000;
 
   &:hover {
-    background: #fec13e;
+    background: #e72510;
   }
 
   &:active {
-    background: #fec13e;
+    background: #e72510;
   }
 
   @media screen and (min-width: 0px) {

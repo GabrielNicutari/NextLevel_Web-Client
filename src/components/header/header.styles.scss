@@ -35,7 +35,7 @@
 
     .option {
       padding: 10px 20px;
-      color: #aaa9ad;
+      color: white;
       cursor: pointer;
       transition: all 0.1s ease;
 
@@ -53,7 +53,8 @@
     position: relative;
     top: 15%;
     padding: 0.5rem 1.8rem;
-    color: #aaa9ad;
+    color: black;
+    background-color: white;
     border: none;
     outline: none;
     cursor: pointer;
@@ -62,5 +63,10 @@
     margin: 0;
     align-items: center;
     vertical-align: center;
+
+    &:hover {
+      background-color: #e72510;
+      transition: all 0.3s ease;
+    }
   }
 }

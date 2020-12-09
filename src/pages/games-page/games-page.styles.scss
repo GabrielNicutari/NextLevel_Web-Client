@@ -3,7 +3,7 @@
 }
 
 .games-page {
-  background-color: #303030;
+  background-color: #232323;
 
   .games-header {
     width: 100%;
@@ -13,6 +13,7 @@
 
     .title {
       @include font();
+      color: white;
       font-size: 28px;
       width: 20%;
       max-width: 1600px;
@@ -43,10 +44,12 @@
 
   .games-listings {
     @include font();
+    color: white;
+    background-color: #111111;
     height: 60px;
-    border-top: 1px solid #ccc;
-    border-bottom: 1px solid #ccc;
-    box-shadow: 0 0 10px #ddd;
+    border-top: 1px solid #111111;
+    border-bottom: 1px solid #111111;
+    box-shadow: 0 0 10px #111111;
     display: flex;
     flex-wrap: wrap;
     //max-width: 1600px;
@@ -56,11 +59,13 @@
 
     .results {
       margin: auto 20px;
+      color: white;
     }
 
     .btn-sort {
       @include font();
-      background-color: #ffdd94;
+      // background-color: #aaa9ad;
+      background-color: white;
       text-decoration: none;
       border: none;
       text-align: center;
@@ -76,7 +81,7 @@
       margin: auto 20px;
 
       &:hover {
-        background-color: #fec13e;
+        background-color: #e72510;
         transition: all 0.3s ease;
       }
     }
