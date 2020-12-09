@@ -3,6 +3,7 @@
 }
 
 .games-page {
+  background-color: #303030;
 
   .games-header {
     width: 100%;
@@ -53,14 +54,13 @@
     margin-right: 10%;
     justify-content: space-between;
 
-
     .results {
       margin: auto 20px;
     }
 
     .btn-sort {
       @include font();
-      background-color:#FFDD94;
+      background-color: #ffdd94;
       text-decoration: none;
       border: none;
       text-align: center;
@@ -68,7 +68,7 @@
       outline: none;
       backdrop-filter: blur(10px);
       box-sizing: border-box;
-      box-shadow: 3px 3px 5px 0 rgba(0,0,0,.1);
+      box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, 0.1);
       transition: all 0.2s ease;
 
       max-width: 340px;
@@ -76,11 +76,9 @@
       margin: auto 20px;
 
       &:hover {
-        background-color:#FEC13E;
+        background-color: #fec13e;
         transition: all 0.3s ease;
       }
     }
   }
 }
-
-
