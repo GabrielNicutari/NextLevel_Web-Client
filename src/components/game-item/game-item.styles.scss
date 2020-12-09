@@ -8,7 +8,7 @@
   color: black;
 }
 
-.recipe-item {
+.game-item {
   position: relative;
   width: 340px;
   display: flex;
@@ -39,7 +39,7 @@
     background-position: center;
   }
 
-  .recipe-item-footer {
+  .game-item-footer {
     margin: 0.8rem;
     position: relative;
     width: 100%;
@@ -55,7 +55,7 @@
       @include font();
     }
 
-    .prep-time {
+    .developer {
       bottom: 0;
       left: .75rem;
       position: absolute;
@@ -63,9 +63,9 @@
       @include font();
     }
 
-    .cook-time {
+    .engine {
       bottom: 0;
-      left: 4.75rem;
+      left: 8.5rem;
       position: absolute;
 
       @include font();

@@ -1,19 +1,19 @@
 import React, { Component } from "react";
 
 import http from "../../services/http.service";
-import RecipeList from "../../components/recipe-list/recipe-list.component";
+import GameList from "../../components/game-list/game-list.component";
 import Loading from "../../Loading";
 import Pagination from "../../components/pagination/pagination.component";
-import { CreateModal } from "../../components/recipe-create/recipe-create-modal.component";
+import { CreateModal } from "../../components/game-create/game-create-modal.component";
 
-import "./recipes-page.styles.scss";
+import "./games-page.styles.scss";
 
-class RecipesPage extends Component {
+class GamesPage extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      recipes: [],
+      games: [],
       currentPage: 0,
       itemsPerPage: 1,
       totalPages: null,
@@ -35,11 +35,11 @@ class RecipesPage extends Component {
     this.setState({ done: undefined });
 
     http
-      .get("recipes?page=" + currentPage + "&sort=" + sort)
+      .get("games?page=" + currentPage + "&sort=" + sort)
       .then((response) => {
         this.setState({ totalPages: response.data.totalPages });
         this.setState({ totalItems: response.data.totalItems });
-        this.setState({ recipes: response.data.recipes });
+        this.setState({ games: response.data.games });
         this.setState({ itemsPerPage: response.data.size });
       })
       .then(() => {
@@ -77,21 +77,12 @@ class RecipesPage extends Component {
   showModal = () => this.setState({ show: true });
 
   render() {
-    const {
-      recipes,
-      done,
-      loading,
-      totalItems,
-      currentPage,
-      sorting,
-      itemsPerPage,
-      show,
-    } = this.state;
+    const {games, done, loading, totalItems, currentPage, sorting, itemsPerPage, show,} = this.state;
 
     return (
-      <div className="recipes-page">
-        <div className="recipes-header">
-          <h1 className="title">RECIPES</h1>
+      <div className="games-page">
+        <div className="games-header">
+          <h1 className="title">GAMES</h1>
           <div className="nav-bar">
             {show ? (
               <div onClick={this.close} className="back-drop show" />
@@ -102,19 +93,19 @@ class RecipesPage extends Component {
               onClick={this.showModal}
               className="btn-large btn-openModal"
             >
-              Create Recipe
+              Create Game
             </button>
           </div>
           <CreateModal show={show} close={this.close} />
         </div>
 
-        <div className="recipes-listings">
+        <div className="games-listings">
           <span className="results">
             {currentPage * itemsPerPage + 1} -{" "}
             {totalItems - currentPage * itemsPerPage > itemsPerPage
               ? (currentPage + 1) * itemsPerPage
               : totalItems}{" "}
-            of {totalItems} total results for <strong>Recipes</strong>
+            of {totalItems} total results for <strong>Games</strong>
           </span>
 
           <button className="btn-mini btn-sort" onClick={this.sortToggle}>
@@ -132,11 +123,11 @@ class RecipesPage extends Component {
         {!done ? (
           <Loading loading={loading} />
         ) : (
-          <RecipeList recipes={recipes} />
+          <GameList games={games} />
         )}
       </div>
     );
   }
 }
 
-export default RecipesPage;
+export default GamesPage;

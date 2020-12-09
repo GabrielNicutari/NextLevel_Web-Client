@@ -6,9 +6,8 @@ import "fontsource-roboto";
 import { Switch, Route } from "react-router-dom";
 
 import Footer from "./components/footer/footer.component";
-import IngredientsPage from "./pages/ingredients-page/ingredients-page.component";
-import RecipesPage from "./pages/recipes-page/recipes-page.component";
-import RecipePage from "./pages/recipe-page/recipe-page.component";
+import GamesPage from "./pages/games-page/games-page.component";
+import GamePage from "./pages/game-page/game-page.component";
 import Header from "./components/header/header.component";
 import HomePage from "./pages/index-page/index-page.component";
 
@@ -29,9 +28,9 @@ class App extends Component {
         <Header />
         <Switch>
           <Route exact path={"/"} component={HomePage} />
-          <Route exact path={"/recipes"} component={RecipesPage} />
-          <Route exact path={"/ingredients"} component={IngredientsPage} />
-          <Route path={"/recipes/:id"} component={RecipePage} />
+          <Route exact path={"/games"} component={GamesPage} />
+          <Route path={"/recipes/:id"} component={GamePage} />
+          {/*<Route exact path={"/customers"} component={CustomersPage} />*/}
         </Switch>
         <Footer />
       </div>

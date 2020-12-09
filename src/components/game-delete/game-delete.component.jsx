@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import http from '../../services/http.service';
-import './recipe-delete.styles.scss';
+import './game-delete.styles.scss';
 
 export default class DeleteRecipe extends Component {
     constructor(props) {

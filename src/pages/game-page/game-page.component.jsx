@@ -2,29 +2,31 @@ import React, {Component} from 'react';
 
 import http from "../../services/http.service";
 import Loading from "../../Loading";
-import './recipe-page.styles.scss';
-import {UpdateModal} from "../../components/recipe-update/recipe-update-modal.component";
-import {DeleteModal} from "../../components/recipe-delete/recipe-delete-modal.component";
+import './game-page.styles.scss';
+import {UpdateModal} from "../../components/game-update/game-update-modal.component";
+import {DeleteModal} from "../../components/game-delete/game-delete-modal.component";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faClock} from "@fortawesome/free-solid-svg-icons";
 
-class RecipePage extends Component {
+class GamePage extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            recipe: {
+            game: {
                 id: null,
-                name: "",
+                title: "",
                 description: "",
-                author: "",
-                prepTime: null,
-                cookTime: null,
-                portions: null,
-                instructions: "",
-                iconSrc: "",
-                imageSrc: "",
-                recipeHasIngredientsById: []
+                releaseDate: "",
+                developer: "",
+                publisher: "",
+                engine: "",
+                price: "",
+                review: "",
+                posterUrl: "",
+                coverUrl: "",
+                adUrl: "",
+                gameHasFieldsById: []
             },
             //ingredients: []
             loading: undefined,
@@ -35,21 +37,21 @@ class RecipePage extends Component {
     }
 
     componentDidMount() {
-        this.getRecipe(this.props.match.params.id);
+        this.getGame(this.props.match.params.id);
     }
 
-    getRecipe(id) {
+    getGame(id) {
         this.setState({loading: undefined});
         this.setState({done: undefined});
 
         http
-            .get("/recipes/" + id)
+            .get("/games/" + id)
             .then((response) => {
                 this.setState({
-                    recipe: response.data
+                    game: response.data
                 });
                 // this.setState({
-                //     ingredients: response.data.recipeHasIngredientsById  //only if we feel like we need it later
+                //     ingredients: response.data.gameHasIngredientsById  //only if we feel like we need it later
                 // })
             })
             .then(() => {
@@ -73,10 +75,10 @@ class RecipePage extends Component {
     showDeleteModal = () => this.setState({showDelete: true})
 
     render() {
-        const { recipe, done, loading, show, showDelete } = this.state;
+        const { game, done, loading, show, showDelete } = this.state;
 
         return (
-            <div className='recipe-page'>
+            <div className='game-page'>
                 {!done?
                     (<Loading loading={loading} />)
                     :
@@ -84,16 +86,16 @@ class RecipePage extends Component {
                         <div
                             className='banner'
                             style={{
-                                backgroundImage: `url(${recipe.imageSrc})`
+                                backgroundImage: `url(${game.imageSrc})`
                             }}
                         />
                         <div className='title'>
-                    <span className='recipe-name'>
-                        {recipe.name}
+                    <span className='game-name'>
+                        {game.name}
                     </span>
 
-                            <span className='recipe-description'>
-                        {recipe.description}
+                            <span className='game-description'>
+                        {game.description}
                     </span>
 
                         <div className="item">
@@ -107,15 +109,15 @@ class RecipePage extends Component {
 
                         <div className='nav-bar'>
                             { showDelete ? <div onClick={this.closeDelete} className='back-drop show'/> : <div className='back-drop'/> }
-                            <button onClick={ this.showDeleteModal } className="btn-medium btn-openModal">Delete Recipe</button>
+                            <button onClick={ this.showDeleteModal } className="btn-medium btn-openModal">Delete Game</button>
                         </div>
-                        <DeleteModal showDelete={showDelete} closeDelete={this.closeDelete} state={this.state.recipe}/>
+                        <DeleteModal showDelete={showDelete} closeDelete={this.closeDelete} state={this.state.game}/>
 
                         <div className='nav-bar'>
                             { show ? <div onClick={this.close} className='back-drop show'/> : <div className='back-drop'/> }
-                            <button onClick={ this.showModal } className="btn-medium btn-openModal btn-updateModal">Update Recipe</button>
+                            <button onClick={ this.showModal } className="btn-medium btn-openModal btn-updateModal">Update Game</button>
                         </div>
-                        <UpdateModal show={show} close={this.close} state={this.state.recipe}/>
+                        <UpdateModal show={show} close={this.close} state={this.state.game}/>
 
                         <div className='ingredients'>
                             <div className='ingredients-header'>
@@ -123,7 +125,7 @@ class RecipePage extends Component {
                             </div>
 
                             <div className='ingredients-item'>
-                                {recipe.recipeHasIngredientsById.map((ingredientById) => (
+                                {game.gameHasIngredientsById.map((ingredientById) => (
                                     <div key={ingredientById.id}>
                                         <span>{ingredientById.unitSize} </span>
 
@@ -143,7 +145,7 @@ class RecipePage extends Component {
                             </div>
 
                             <div className='instructions-item'>
-                                {recipe.instructions}
+                                {game.instructions}
                             </div>
                         </div>
                     </div>)
@@ -153,4 +155,4 @@ class RecipePage extends Component {
     }
 }
 
-export default RecipePage;
+export default GamePage;

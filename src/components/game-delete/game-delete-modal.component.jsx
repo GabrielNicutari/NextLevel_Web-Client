@@ -1,6 +1,6 @@
 import React from 'react'
-import './recipe-delete.styles.scss'
-import DeleteRecipe from "./recipe-delete.component.jsx";
+import './game-delete.styles.scss'
+import DeleteRecipe from "./game-delete.component.jsx";
 
 export const DeleteModal= ({showDelete, closeDelete, state}) => {
 

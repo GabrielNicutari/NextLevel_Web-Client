@@ -12,11 +12,11 @@ const Header = () => (
             <Logo className='logo'/>
         </Link>
         <div className='options'>
-            <Link className='option' to='/recipes'>
-                RECIPES
+            <Link className='option' to='/games'>
+                GAMES
             </Link>
-            <Link className='option' to='/ingredients'>
-                INGREDIENTS
+            <Link className='option' to='/customers'>
+               OTHER
             </Link>
         </div>
         <button className="btn-medium btn-login">Login</button>

@@ -1,6 +1,6 @@
 import React from 'react'
-import './recipe-create-modal.styles.scss'
-import CreateRecipe from './recipe-create.component.jsx'
+import './game-create-modal.styles.scss'
+import CreateRecipe from './game-create.component.jsx'
 
 export const CreateModal= ({show, close}) => {
     return (

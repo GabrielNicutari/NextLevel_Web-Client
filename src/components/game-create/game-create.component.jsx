@@ -1,9 +1,8 @@
 import React, {Component} from 'react';
 import http from '../../services/http.service';
-import './recipe-update.styles.scss';
-import { withRouter } from 'react-router-dom';
+import './game-create.style.scss'
 
-class UpdateRecipe extends Component {
+export default class CreateRecipe extends Component {
     constructor(props) {
         super(props);
 
@@ -18,12 +17,8 @@ class UpdateRecipe extends Component {
             instructions: "",
             iconSrc: "",
             imageSrc: "",
-            recipeHasIngredientsById: []
+            ingredients: []
         };
-    }
-
-    componentDidMount() {
-        this.setState(this.props.state);
     }
 
     onChangeName = e => {
@@ -62,31 +57,45 @@ class UpdateRecipe extends Component {
         this.setState({imageSrc: e.target.value})
     }
 
-    updateRecipe = () => {
+    saveRecipe = () => {
 
-        http
-            .put(
-                "/recipes/update/" + this.state.id,
-                this.state
-            )
-            .then((response) => {
-                this.props.history.go(0);
+        let newRecipe = {
+            name: this.state.name,
+            description: this.state.description,
+            author: this.state.author,
+            prepTime: this.state.prepTime,
+            cookTime: this.state.cookTime,
+            portions: this.state.portions,
+            instructions: this.state.instructions,
+            iconSrc: this.state.iconSrc,
+            imageSrc: this.state.imageSrc
+        }
+
+        http.post("/recipes/create", newRecipe)
+            .then(r => {
+                this.setState({
+                    name: r.data.name,
+                    description: r.data.description,
+                    author: r.data.author,
+                    prepTime: r.data.prepTime,
+                    cookTime: r.data.cookTime,
+                    portions: r.data.portions,
+                    instructions: r.data.instructions,
+                    iconSrc: r.data.iconSrc,
+                    imageSrc: r.data.imageSrc
+                });
             })
-            .catch((e) => {
+            .catch(e => {
                 console.log(e);
-            });
-    }
+            })
 
-    afterSubmission = (event) => {
-        event.preventDefault();
     }
 
     render() {
-
         return(
             <div className='container'>
 
-                <form onSubmit={this.afterSubmission}>
+                <form>
                     <div className="field1-2">
                         <div>
                             <label>Name</label><br/>
@@ -106,10 +115,10 @@ class UpdateRecipe extends Component {
 
                     <div>
                         <label>Description: </label><br/>
-                        <textarea
-                            placeholder="Recipe Description" rows={5} cols={50}
-                            value={this.state.description} onChange={this.onChangeDescription}
-                            id="description" name="description"
+                        <textarea className="text-box"
+                             placeholder="Recipe Description"
+                             value={this.state.description} onChange={this.onChangeDescription}
+                             id="description" name="description"
                         />
                     </div>
 
@@ -142,10 +151,10 @@ class UpdateRecipe extends Component {
                         </div>
                     </div>
 
-                    <div className="instructionse">
+                    <div className="instructions">
                         <label>Instructions: </label><br/>
-                        <textarea
-                            placeholder="Recipe Instructions" rows={15  } cols={50}
+                        <textarea className="text-box"
+                            placeholder="Recipe Instructions"
                             id="instructions" name="instructions" required
                             value={this.state.instructions} onChange={this.onChangeInstructions}
 
@@ -166,7 +175,7 @@ class UpdateRecipe extends Component {
                         />
                     </div>
 
-                    <button className="btn-small btn-submit" onClick={() => {this.updateRecipe(); this.props.close()}} type="submit">
+                    <button className="btn-small btn-submit" onClick={this.saveRecipe}>
                         Submit
                     </button>
 
@@ -175,5 +184,3 @@ class UpdateRecipe extends Component {
         );
     }
 }
-
-export default withRouter(UpdateRecipe);

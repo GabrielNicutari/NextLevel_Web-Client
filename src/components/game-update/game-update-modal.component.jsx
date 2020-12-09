@@ -1,6 +1,6 @@
 import React from 'react'
-import './recipe-update.styles.scss'
-import UpdateRecipe from './recipe-update.component.jsx'
+import './game-update.styles.scss'
+import UpdateRecipe from './game-update.component.jsx'
 
 export const UpdateModal= ({show, close, state}) => {
 
