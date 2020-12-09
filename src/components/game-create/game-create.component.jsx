@@ -150,7 +150,7 @@ export default class CreateGame extends Component {
                         <div>
                             <label>Review: </label><br/>
                             <input
-                                type="number" min={0} step={1} required
+                                type="number" min={0} step={0.1} required
                                 value={this.state.review} onChange={this.onChangeReview}
                                 name="review" id="review"
                             />
@@ -159,7 +159,7 @@ export default class CreateGame extends Component {
                         <div>
                             <label>Price: </label><br/>
                             <input
-                                type="number" min={0} step={1} required
+                                type="number" min={0} step={0.01} required
                                 value={this.state.price} onChange={this.onChangePrice}
                                 id="price" name="price"
                             />
