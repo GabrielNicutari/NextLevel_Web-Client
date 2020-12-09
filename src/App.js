@@ -11,6 +11,7 @@ import GamePage from "./pages/game-page/game-page.component";
 import Header from "./components/header/header.component";
 import HomePage from "./pages/index-page/index-page.component";
 
+
 class App extends Component {
   constructor() {
     super();

@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 
 import './index-page.styles.scss';
 import SocialFooter from "../../components/social-footer/social-footer.component";
+import BootstrapCarousel from "../../components/carousel/carousel.component";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 class HomePage extends Component {
     constructor(props) {
@@ -18,16 +20,7 @@ class HomePage extends Component {
             <div className ='homePage'>
                 <div className='bannerImage'>
 
-                    <div className='companyLogo'> </div>
-
-                    <div className='bannerText'> </div>
-
-                    <div className='cta'>
-                        <p className='bannerText'>Tailor your weekly menu so you get the most delicious recipes</p>
-                        <br/>
-                        <p className='bannerText'>and fresh ingredients delivered to your door.</p>
-                        <button className="btn-large btn-cta">Order now</button>
-                    </div>
+                    <BootstrapCarousel></BootstrapCarousel>
 
                 </div>
 
