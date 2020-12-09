@@ -1,0 +1,146 @@
+@mixin font {
+  font-family: Roboto;
+  font-style: normal;
+  color: black;
+}
+
+.recipe-page {
+
+  .banner {
+    width: 100%;
+    height: 500px;
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 5px;
+  }
+
+  .title {
+    margin: 1.5rem 1.5rem 1.5rem 4rem;
+    position: relative;
+    padding-left: 5%;
+    margin-top: 3%;
+
+    height: 120px;
+
+    .recipe-name {
+      position: absolute;
+
+      @include font();
+      font-weight: bold;
+      font-size: 72px;
+      line-height: 84px;
+    }
+
+    .recipe-description {
+      position: absolute;
+      bottom: 0;
+
+      @include font();
+      font-weight: normal;
+      font-size: 22px;
+      line-height: 28px;
+    }
+  }
+
+  .ingredients {
+    margin: 3rem 1.5rem 1.5rem 4rem;
+    position: relative;
+    height: 400px;
+    width: 400px;
+    padding-left: 5%;
+
+    margin-top: 100px;
+    margin-bottom: -50px;
+
+
+    .ingredients-header {
+      position: relative;
+      height: 70px;
+
+      @include font();
+      font-style: italic;
+      font-weight: bold;
+      font-size: 64px;
+      line-height: 75px;
+
+      color: #FEC13E;
+    }
+
+    .ingredients-item {
+      position: relative;
+      margin-top: 1.5rem;
+
+      @include font();
+      font-weight: normal;
+      font-size: 24px;
+      line-height: 28px;
+    }
+  }
+
+  .instructions {
+    margin: 3rem 1.5rem 1.5rem 4rem;
+    position: relative;
+    height: 100%;
+    width: 900px;
+    padding-left: 5%;
+
+    margin-bottom: 150px;
+
+
+    .instructions-header {
+      position: relative;
+      height: 70px;
+
+      @include font();
+      font-style: italic;
+      font-weight: bold;
+      font-size: 64px;
+      line-height: 75px;
+
+      color: #FEC13E;
+    }
+
+    .instructions-item {
+      position: relative;
+      margin-top: 1.5rem;
+
+      @include font();
+      font-weight: normal;
+      font-size: 1rem !important;
+      line-height: 28px;
+    }
+  }
+
+  .btn-openModal {
+    border: none;
+    outline: none;
+    cursor: pointer;
+
+    float: right;
+    position: relative;
+    top: -120px;
+    margin-right: 10%;
+  }
+
+  .item {
+    position: relative;
+    top: 150px;
+    font-family: Roboto;
+  }
+
+  .clockIcon {
+    margin-right: 20px;
+  }
+
+  .highLight2 {
+    color: #FEC13E;
+    font-family: Roboto;
+    font-weight: bold;
+    margin-right: 10px;
+  }
+
+  .btn-updateModal {
+    margin-right: 10px;
+  }
+}
+

@@ -1,0 +1,29 @@
+@mixin font {
+  font-family: Roboto;
+}
+
+.social-media-block {
+  background: rgb(245,245,245);
+  background: linear-gradient(90deg, rgb(245, 245, 245) 0%, rgba(200, 200, 200, 0.41) 100%);
+  text-align: center;
+}
+
+
+.follow-us {
+  @include font();
+  margin: 2vw 0 0 0;
+  padding: 5vh 0 0 0;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 72px;
+  line-height: 84px;
+}
+
+.icon {
+  margin: 0 1vw 7vh 1vh;
+  color: #181818;
+  //outline: 1px solid #000000;
+}
+
+
+

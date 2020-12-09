@@ -1,0 +1,40 @@
+form div {
+  margin: 4vh 0;
+  font-size: 1.5rem;
+  color: #292929;
+}
+
+input,
+textarea {
+  border: none;
+  border-bottom: #838383 solid 2px;
+  outline: none;
+  padding: 1vh 0;
+  font-size: 1.5rem;
+  margin: 1vh 1vh 1vh 0;
+  transition: border-bottom 0.1s;
+  resize: none;
+  width: 100%;
+}
+
+input:focus,
+textarea:focus {
+  transition: border-bottom 0.1s;
+  border-bottom: #fec13e solid 2px;
+}
+
+input:hover,
+textarea:hover {
+  transition: border-bottom 0.1s;
+  border-bottom: #fec13e solid 2px;
+}
+
+.field1-2 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.field3 {
+  display: flex;
+  justify-content: space-between;
+}

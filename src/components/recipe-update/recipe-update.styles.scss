@@ -1,0 +1,46 @@
+form div {
+    margin: 4vh 0;
+    font-size: 1.5rem;
+    color: #292929;
+}
+
+input, textarea {
+    border: none;
+    border-bottom: #838383 solid 2px;
+    outline: none;
+    padding: 1vh 0;
+    font-size: 1.5rem;
+    margin: 1vh 1vh 1vh 0;
+    transition: border-bottom .1s;
+    resize: none;
+    width: 100%;
+}
+
+input:focus, textarea:focus {
+    transition: border-bottom .1s;
+    border-bottom: #FEC13E solid 2px;
+}
+
+input:hover, textarea:hover {
+    transition: border-bottom .1s;
+    border-bottom: #FEC13E solid 2px;
+}
+
+.field1-2 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.field4-5-6 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.field4-5-6 input {
+    width: 5.6vw
+}
+
+.url-source input {
+    width: 100%;
+}
+
