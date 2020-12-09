@@ -4,11 +4,6 @@
     <list default="true" id="25d1764b-0ccc-4da2-b3d6-57ab9ae9c0be" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Loading.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Loading.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/done.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/done.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/loading.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/loading.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/footer/footer.component.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/footer/footer.component.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/game-page/game-page.component.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/game-page/game-page.component.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/game-page/game-page.styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/game-page/game-page.styles.scss" afterDir="false" />
     </list>
@@ -63,7 +58,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1607480091081</updated>
-      <workItem from="1607480092756" duration="5861000" />
+      <workItem from="1607480092756" duration="7200000" />
     </task>
     <servers />
   </component>

@@ -28,7 +28,7 @@ class GamePage extends Component {
                 adUrl: "",
                 gameHasFieldsById: []
             },
-            //fields: []
+            sysRequirementsBySysRequirementId: [],
             loading: undefined,
             done: undefined,
             show: false,
@@ -94,9 +94,9 @@ class GamePage extends Component {
                                 {game.title}
                             </span>
 
-                            <span className='game-description'>
+                            <div className='game-description'>
                                 {game.description}
-                            </span>
+                            </div>
 
                             <div className="item">
                                     <p ><FontAwesomeIcon icon={faClock} className="clockIcon" size={"1x"}/>
@@ -119,25 +119,41 @@ class GamePage extends Component {
                         </div>
                         <UpdateModal show={show} close={this.close} state={this.state.game}/>
 
-                        {/*<div className='fields'>*/}
-                        {/*    <div className='fields-header'>*/}
-                        {/*        Fields*/}
-                        {/*    </div>*/}
+                        <div className='fields'>
+                            <div className='fields-header'>
+                                Fields
+                            </div>
 
-                        {/*    <div className='fields-item'>*/}
-                        {/*        {game.gameHasFieldsById.map((gameHasFieldsById) => (*/}
-                        {/*            <div key={gameHasFieldsById.id}>*/}
-                        {/*                <span>{gameHasFieldsById.unitSize} </span>*/}
+                            <div className='fields-item'>
+                                <div className='game-description'>
+                                    {game.releaseDate}
+                                </div>
 
-                        {/*                {gameHasFieldsById.gameHasFieldsById.measurementUnitByMeasurementUnitId.type === "ammount" ?*/}
-                        {/*                    ' ' : <span>{gameHasFieldsById.fieldsByFieldId.measurementUnitByMeasurementUnitId.type} </span>*/}
-                        {/*                }*/}
+                                <div className='game-description'>
+                                    {game.developer}
+                                </div>
 
-                        {/*                <span>{gameHasFieldsById.gameHasFieldsById.name} </span>*/}
-                        {/*            </div>*/}
-                        {/*        ))}*/}
-                        {/*    </div>*/}
-                        {/*</div>*/}
+                                <div className='game-description'>
+                                    {game.publisher}
+                                </div>
+
+                                <div className='game-description'>
+                                    {game.engine}
+                                </div>
+
+                                <div className='game-description'>
+                                    {game.price}
+                                </div>
+
+                                <div className='game-description'>
+                                    {game.review}
+                                </div>
+
+                                <div className='game-description'>
+                                    {game.trailerUrl}
+                                </div>
+                            </div>
+                        </div>
 
                         <div className='instructions'>
                             <div className='instructions-header'>
@@ -145,7 +161,31 @@ class GamePage extends Component {
                             </div>
 
                             <div className='instructions-item'>
-                                {game.title}
+                                {game.gameHasFieldsById.map((field) => (
+                                    <div key={field.id}>
+                                        <div>Platform: {field.platformByPlatformId.name} </div>
+
+                                        <div>Genre: {field.genreByGenreId.name} </div>
+
+                                        <div>Mode: {field.modeByModeId.name} </div>
+
+                                        <div>Pegi Rating:{field.pegiRatingsByPegiRatingId.rating} </div>
+
+                                        <br/>
+
+                                        <div>
+                                            <p><strong>SYS REQ</strong></p>
+                                            <div>CPU: {field.sysRequirementsBySysRequirementId.cpu} </div>
+                                            <div>GPU: {field.sysRequirementsBySysRequirementId.gpu} </div>
+                                            <div>MEMORY: {field.sysRequirementsBySysRequirementId.memory} </div>
+                                            <div>STORAGE: {field.sysRequirementsBySysRequirementId.storage} </div>
+                                            <div>OS: {field.sysRequirementsBySysRequirementId.os} </div>
+                                        </div>
+
+                                        <br/>
+
+                                    </div>
+                                ))}
                             </div>
                         </div>
                     </div>)
