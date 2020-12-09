@@ -28,7 +28,7 @@ class GamePage extends Component {
                 adUrl: "",
                 gameHasFieldsById: []
             },
-            //ingredients: []
+            //fields: []
             loading: undefined,
             done: undefined,
             show: false,
@@ -51,7 +51,7 @@ class GamePage extends Component {
                     game: response.data
                 });
                 // this.setState({
-                //     ingredients: response.data.gameHasIngredientsById  //only if we feel like we need it later
+                //     fields: response.data.gameHasFieldsById  //only if we feel like we need it later
                 // })
             })
             .then(() => {
@@ -86,24 +86,24 @@ class GamePage extends Component {
                         <div
                             className='banner'
                             style={{
-                                backgroundImage: `url(${game.imageSrc})`
+                                backgroundImage: `url(${game.coverUrl})`
                             }}
                         />
                         <div className='title'>
-                    <span className='game-name'>
-                        {game.name}
-                    </span>
+                            <span className='game-name'>
+                                {game.title}
+                            </span>
 
                             <span className='game-description'>
-                        {game.description}
-                    </span>
+                                {game.description}
+                            </span>
 
-                        <div className="item">
-                                <p ><FontAwesomeIcon icon={faClock} className="clockIcon" size={"1x"}/>
-                                    Prep time: <span className="highLight2">20 minutes</span>
-                                    Cook time: <span className="highLight2">30 minutes</span>
-                                    Total time: <span className="highLight2">50 minutes</span>
-                                </p>
+                            <div className="item">
+                                    <p ><FontAwesomeIcon icon={faClock} className="clockIcon" size={"1x"}/>
+                                        Prep time: <span className="highLight2">20 minutes</span>
+                                        Cook time: <span className="highLight2">30 minutes</span>
+                                        Total time: <span className="highLight2">50 minutes</span>
+                                    </p>
                             </div>
                         </div>
 
@@ -119,33 +119,33 @@ class GamePage extends Component {
                         </div>
                         <UpdateModal show={show} close={this.close} state={this.state.game}/>
 
-                        <div className='ingredients'>
-                            <div className='ingredients-header'>
-                                Ingredients
-                            </div>
+                        {/*<div className='fields'>*/}
+                        {/*    <div className='fields-header'>*/}
+                        {/*        Fields*/}
+                        {/*    </div>*/}
 
-                            <div className='ingredients-item'>
-                                {game.gameHasIngredientsById.map((ingredientById) => (
-                                    <div key={ingredientById.id}>
-                                        <span>{ingredientById.unitSize} </span>
+                        {/*    <div className='fields-item'>*/}
+                        {/*        {game.gameHasFieldsById.map((gameHasFieldsById) => (*/}
+                        {/*            <div key={gameHasFieldsById.id}>*/}
+                        {/*                <span>{gameHasFieldsById.unitSize} </span>*/}
 
-                                        {ingredientById.ingredientsByIngredientId.measurementUnitByMeasurementUnitId.type === "ammount" ?
-                                            ' ' : <span>{ingredientById.ingredientsByIngredientId.measurementUnitByMeasurementUnitId.type} </span>
-                                        }
+                        {/*                {gameHasFieldsById.gameHasFieldsById.measurementUnitByMeasurementUnitId.type === "ammount" ?*/}
+                        {/*                    ' ' : <span>{gameHasFieldsById.fieldsByFieldId.measurementUnitByMeasurementUnitId.type} </span>*/}
+                        {/*                }*/}
 
-                                        <span>{ingredientById.ingredientsByIngredientId.name} </span>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
+                        {/*                <span>{gameHasFieldsById.gameHasFieldsById.name} </span>*/}
+                        {/*            </div>*/}
+                        {/*        ))}*/}
+                        {/*    </div>*/}
+                        {/*</div>*/}
 
                         <div className='instructions'>
                             <div className='instructions-header'>
-                                Instructions
+                                Other Fields
                             </div>
 
                             <div className='instructions-item'>
-                                {game.instructions}
+                                {game.title}
                             </div>
                         </div>
                     </div>)

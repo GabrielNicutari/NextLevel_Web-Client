@@ -2,33 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="25d1764b-0ccc-4da2-b3d6-57ab9ae9c0be" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.env.development" beforeDir="false" afterPath="$PROJECT_DIR$/.env.development" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env.production" beforeDir="false" afterPath="$PROJECT_DIR$/.env.production" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/header/header.component.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/header.component.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/recipe-create/recipe-create-modal.component.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/game-create/game-create-modal.component.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/recipe-create/recipe-create-modal.styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/game-create/game-create-modal.styles.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/recipe-create/recipe-create.component.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/game-create/game-create.component.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/recipe-create/recipe-create.style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/game-create/game-create.style.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/recipe-delete/recipe-delete-modal.component.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/game-delete/game-delete-modal.component.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/recipe-delete/recipe-delete-modal.styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/game-delete/game-delete-modal.styles.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/recipe-delete/recipe-delete.component.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/game-delete/game-delete.component.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/recipe-delete/recipe-delete.styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/game-delete/game-delete.styles.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/recipe-item/recipe-item.component.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/game-item/game-item.component.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/recipe-item/recipe-item.styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/game-item/game-item.styles.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/recipe-list/recipe-list.component.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/game-list/game-list.component.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/recipe-list/recipe-list.styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/game-list/game-list.styles.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/recipe-update/recipe-update-modal.component.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/game-update/game-update-modal.component.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/recipe-update/recipe-update-modal.styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/game-update/game-update-modal.styles.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/recipe-update/recipe-update.component.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/game-update/game-update.component.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/recipe-update/recipe-update.styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/game-update/game-update.styles.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/recipe-page/recipe-page.component.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/game-page/game-page.component.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/recipe-page/recipe-page.styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/game-page/game-page.styles.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/recipes-page/recipes-page.component.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/games-page/games-page.component.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/recipes-page/recipes-page.styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/games-page/games-page.styles.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Loading.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Loading.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/done.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/done.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/loading.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/loading.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/footer/footer.component.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/footer/footer.component.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/game-page/game-page.component.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/game-page/game-page.component.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/game-page/game-page.styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/game-page/game-page.styles.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +63,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1607480091081</updated>
-      <workItem from="1607480092756" duration="2934000" />
+      <workItem from="1607480092756" duration="5861000" />
     </task>
     <servers />
   </component>

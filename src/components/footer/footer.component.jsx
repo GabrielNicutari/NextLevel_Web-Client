@@ -12,7 +12,7 @@ import { Link } from "react-router-dom";
 const Footer = () => (
     <div className="footer">
         <div className="grid">
-            <div className="grid-header">We Bring | U Cook</div>
+            <div className="grid-header">Next Level</div>
             At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores.
         </div>
 
