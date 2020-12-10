@@ -49,6 +49,9 @@ class App extends Component {
   render() {
     console.log(process.env.REACT_APP_NAME);
     console.log(process.env.REACT_APP_API_URL);
+
+    console.log(this.state.currentUser);
+
     return (
       <div>
         <Header currentUser={this.state.currentUser}/>
