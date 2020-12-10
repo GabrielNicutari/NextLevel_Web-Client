@@ -8,7 +8,6 @@ import {DeleteModal} from "../../components/game-delete/game-delete-modal.compon
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faBuilding, faCalendarDay, faClock, faPowerOff, faStar, faUsers} from "@fortawesome/free-solid-svg-icons";
 import YouTube from 'react-youtube-embed'
-import {faClock} from "@fortawesome/free-solid-svg-icons";
 //import axios from "axios";
 
 class GamePage extends Component {
