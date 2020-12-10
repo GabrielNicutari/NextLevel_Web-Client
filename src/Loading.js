@@ -29,7 +29,7 @@ const Loading = ({loading}) => {
                 marginTop: '5 rem'
             }}>
             {!loading ? (
-                <Lottie options={defaultOptions} height={480} width={600} speed={2} />
+                <Lottie options={defaultOptions} height={480} width={600} speed={1} />
             ) : (
                 <Lottie options={defaultOptions2} height={360} width={360} speed={3} />
             )}
