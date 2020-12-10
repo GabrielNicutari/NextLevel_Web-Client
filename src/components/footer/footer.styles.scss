@@ -1,10 +1,10 @@
 @mixin font {
   font-family: Roboto;
+  color: white;
 }
 
 .footer {
-  background: rgb(255, 215, 126);
-  background: linear-gradient(273.85deg, #FFDD94 1.04%, rgba(255, 230, 176, 0.8) 93.82%);
+  background-color: #111111;
   display: flex;
   justify-content: center;
   padding: 10vh 10vh 10vh 10vh;
@@ -15,24 +15,33 @@
   font-style: normal;
   font-weight: bold;
   font-size: 24px;
-  //line-height: 28px;
   margin-bottom: 2vh;
 }
 
 .grid {
+  @include font();
   width: 15vw;
   margin: 0 3vw;
 }
 
 .grid:first-child {
+  @include font();
   margin: 0 3vw 0 0;
 }
 
 .grid:last-child {
+  @include font();
   margin: 0 0 0 3vw;
 }
 
 .item {
   @include font();
   margin-bottom: 1vh;
+
+  &:hover {
+    cursor: pointer;
+
+    color: #e72510;
+    transition: all 0.2s ease;
+  }
 }

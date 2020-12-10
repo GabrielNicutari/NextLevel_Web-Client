@@ -3,11 +3,11 @@
 }
 
 .social-media-block {
-  background: rgb(245,245,245);
-  background: linear-gradient(90deg, rgb(245, 245, 245) 0%, rgba(200, 200, 200, 0.41) 100%);
+  //background: rgb(245,245,245);
+  //background: linear-gradient(90deg, rgb(245, 245, 245) 0%, rgba(200, 200, 200, 0.41) 100%);
+  background: #d7d2cb;
   text-align: center;
 }
-
 
 .follow-us {
   @include font();
@@ -17,13 +17,18 @@
   font-weight: bold;
   font-size: 72px;
   line-height: 84px;
+  color: white;
 }
 
 .icon {
   margin: 0 1vw 7vh 1vh;
-  color: #181818;
+  color: white;
   //outline: 1px solid #000000;
+
+  &:hover {
+    cursor: pointer;
+
+    color: #e72510;
+    transition: all 0.2s ease;
+  }
 }
-
-
-

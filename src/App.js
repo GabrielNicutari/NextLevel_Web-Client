@@ -13,6 +13,7 @@ import HomePage from "./pages/index-page/index-page.component";
 import SignInAndSignUpPage from "./pages/sign-in-and-sign-up/sign-in-and-sign-up.component";
 import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
 
+
 class App extends Component {
   constructor() {
     super();
