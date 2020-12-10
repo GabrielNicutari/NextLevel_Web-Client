@@ -7,106 +7,163 @@ export default class CreateGame extends Component {
         super(props);
 
         this.state = {
-            id: null,
-            title: "",
-            description: "",
-            releaseDate: "",
-            developer: "",
-            publisher: "",
-            engine: "",
-            price: "",
-            review: "",
-            posterUrl: "",
-            coverUrl: "",
-            trailerUrl: "",
-            adUrl: "",
-            gameHasFieldsById: []
+            game: {
+                id: null,
+                title: "",
+                description: "",
+                releaseDate: "",
+                developer: "",
+                publisher: "",
+                engine: "",
+                price: "",
+                review: "",
+                posterUrl: "",
+                coverUrl: "",
+                trailerUrl: "",
+                adUrl: "",
+                gameHasFieldsById: []
+            },
+
+            platformByPlatformId: {id: ""},
+            sysRequirementsBySysRequirementId: {id: ""},
+            genreByGenreId: {id: ""},
+            modeByModeId: {id: ""},
+            pegiRatingsByPegiRatingId: {id: ""},
+
+            platforms: []/*this.props.state.platforms*/,
+            sysRequirements: [],
+            genres: [],
+            modes: [],
+            pegiRatings: []
         };
     }
 
+    fetchData = async () => {
+
+    }
+
+    componentDidMount() {
+        // this.setState({game: {...this.state.game, id: this.props.state.game.id}});
+        this.setState({platforms: this.props.state.platforms});
+        this.setState({sysRequirements: this.props.state.sysRequirements});
+        this.setState({genres: this.props.state.genres});
+        this.setState({modes: this.props.state.modes});
+        this.setState({pegiRatings: this.props.state.pegiRatings});
+        this.forceUpdate();
+    }
+
     onChangeTitle = e => {
-        this.setState({title: e.target.value});
+        this.setState({game: {...this.state.game, title: e.target.value}});
     }
 
    onChangeDescription = e => {
-        this.setState({description: e.target.value});
+        this.setState({game: {...this.state.game, description: e.target.value}});
    }
 
     onChangeReleaseDate = e => {
-        this.setState({releaseDate: e.target.value})
+        this.setState({game: {...this.state.game, releaseDate: e.target.value}})
     }
 
     onChangeDeveloper = e => {
-        this.setState({developer: e.target.value})
+        this.setState({game: {...this.state.game, developer: e.target.value}})
     }
 
     onChangePublisher = e => {
-        this.setState({publisher: e.target.value})
+        this.setState({game: {...this.state.game, publisher: e.target.value}})
     }
 
     onChangeEngine = e => {
-        this.setState({engine: e.target.value})
+        this.setState({game: {...this.state.game, engine: e.target.value}})
     }
 
     onChangePrice = e => {
-        this.setState({price: e.target.value})
+        this.setState({game: {...this.state.game, price: e.target.value}})
     }
 
     onChangeReview = e => {
-        this.setState({review: e.target.value})
+        this.setState({game: {...this.state.game, review: e.target.value}})
     }
 
     onChangePosterUrl =  e => {
-        this.setState({posterUrl: e.target.value})
+        this.setState({game: {...this.state.game, posterUrl: e.target.value}})
     }
 
     onChangeCoverUrl = e => {
-        this.setState({coverUrl: e.target.value})
+        this.setState({game: {...this.state.game, coverUrl: e.target.value}})
     }
 
     onChangeTrailerUrl = e => {
-        this.setState({trailerUrl: e.target.value})
+        this.setState({game: {...this.state.game, trailerUrl: e.target.value}})
     }
 
     onChangeAdUrl = e => {
-        this.setState({adUrl: e.target.value})
+        this.setState({game: {...this.state.game, adUrl: e.target.value}})
+    }
+
+    onChangePlatform = e => {
+        this.setState({platformByPlatformId: {id: e.target.value}}, () => console.log(this.state.platformByPlatformId.id))
+    }
+
+    onChangeSysRequirement = e => {
+        this.setState({sysRequirementsBySysRequirementId: {id: e.target.value}})
+    }
+
+    onChangeGenres = e => {
+        this.setState({genreByGenreId: {id: e.target.value}})
+    }
+
+    onChangeModes = e => {
+        this.setState({modeByModeId: {id: e.target.value}})
+    }
+
+    onChangePegiRatings = e => {
+        this.setState({pegiRatingsByPegiRatingId: {id: e.target.value}})
     }
 
 
     saveGame = () => {
 
         let newGame = {
-            title: this.state.title,
-            description: this.state.description,
-            releaseDate: this.state.releaseDate,
-            developer: this.state.developer,
-            publisher: this.state.publisher,
-            engine: this.state.engine,
-            price: this.state.price,
-            review: this.state.review,
-            posterUrl: this.state.posterUrl,
-            coverUrl: this.state.coverUrl,
-            trailerUrl: this.state.trailerUrl,
-            adUrl: this.state.adUrl
+            title: this.state.game.title,
+            description: this.state.game.description,
+            releaseDate: this.state.game.releaseDate,
+            developer: this.state.game.developer,
+            publisher: this.state.game.publisher,
+            engine: this.state.game.engine,
+            price: this.state.game.price,
+            review: this.state.game.review,
+            posterUrl: this.state.game.posterUrl,
+            coverUrl: this.state.game.coverUrl,
+            trailerUrl: this.state.game.trailerUrl,
+            adUrl: this.state.game.adUrl
         }
 
+
+        let gameHasFields = {
+            gameByGameId: this.state.game.id,
+            platformByPlatformId: this.state.platformByPlatformId,
+            sysRequirementsBySysRequirementId: this.state.sysRequirementsBySysRequirementId,
+            genreByGenreId: this.state.genreByGenreId,
+            modeByModeId: this.state.modeByModeId,
+            pegiRatingsByPegiRatingId: this.state.pegiRatingsByPegiRatingId
+        }
+
+
+
         http.post("/games/create", newGame)
-            .then(r => {
-                this.setState({
-                    title: r.data.title,
-                    description: r.data.description,
-                    releaseDate: r.data.releaseDate,
-                    developer: r.data.developer,
-                    publisher: r.data.publisher,
-                    engine: r.data.engine,
-                    price: r.data.price,
-                    review: r.data.review,
-                    posterUrl: r.data.posterUrl,
-                    coverUrl: r.data.coverUrl,
-                    trailerUrl: r.data.trailerUrl,
-                    adUrl: r.data.adUrl
-                });
+            .then(r => r.json())
+                .then(data => {
+                    this.setState({game: {...this.state.game, id: data.id}});
+                })
+            .then(() =>{
+                console.log();
+                setTimeout(() => {console.log("hi")},5000)
             })
+
+
+            .then(() => http.post("/games/insertIntoGameHasFields", gameHasFields)
+                .then(() => {console.log("hi")})
+                )
             .catch(e => {
                 console.log(e);
             })
@@ -114,6 +171,8 @@ export default class CreateGame extends Component {
     }
 
     render() {
+        console.log("state" , this.state);
+
         return(
             <div className='container'>
 
@@ -122,7 +181,7 @@ export default class CreateGame extends Component {
                         <div>
                             <label>Title</label><br/>
                             <input
-                                type="text" id="title" required value={this.state.title}
+                                type="text" id="title" required value={this.state.game.title}
                                 onChange={this.onChangeTitle} name="title"
                             />
                         </div>
@@ -131,7 +190,7 @@ export default class CreateGame extends Component {
                             <label>Description: </label><br/>
                             <textarea className="text-box"
                                       placeholder="Game Description"
-                                      value={this.state.description} onChange={this.onChangeDescription}
+                                      value={this.state.game.description} onChange={this.onChangeDescription}
                                       id="description" name="description"
                             />
                         </div>
@@ -144,43 +203,43 @@ export default class CreateGame extends Component {
                             <label>ReleaseDate</label><br/>
                             <input
                                 type="date" id="releaseDate" required
-                                value={this.state.releaseDate} onChange={this.onChangeReleaseDate} name="releaseDate"
+                                value={this.state.game.releaseDate} onChange={this.onChangeReleaseDate} name="releaseDate"
                             />
                         </div>
                         <div>
                             <label>Review: </label><br/>
                             <input
                                 type="number" min={0} step={0.1} required
-                                value={this.state.review} onChange={this.onChangeReview}
+                                value={this.state.game.review} onChange={this.onChangeReview}
                                 name="review" id="review"
                             />
                         </div>
 
                         <div>
-                            <label>Price: </label><br/>
+                            <label>Price1: </label><br/>
                             <input
                                 type="number" min={0} step={0.01} required
-                                value={this.state.price} onChange={this.onChangePrice}
+                                value={this.state.game.price} onChange={this.onChangePrice}
                                 id="price" name="price"
                             />
                         </div>
                     </div>
 
                     <div className="developer">
-                        <label>Developer: </label><br/>
+                        <label>Develope1: </label><br/>
                         <textarea className="text-box"
                                   placeholder="Game Developer"
                                   id="developer" name="developer" required
-                                  value={this.state.developer} onChange={this.onChangeDeveloper}
+                                  value={this.state.game.developer} onChange={this.onChangeDeveloper}
                         />
                     </div>
 
                     <div className="publisher">
-                        <label>Publisher: </label><br/>
+                        <label>Publisher2: </label><br/>
                         <textarea className="text-box"
                                   placeholder="Game Publisher"
                                   id="publisher" name="publisher" required
-                                  value={this.state.publisher} onChange={this.onChangePublisher}
+                                  value={this.state.game.publisher} onChange={this.onChangePublisher}
                         />
                     </div>
 
@@ -189,7 +248,7 @@ export default class CreateGame extends Component {
                         <textarea className="text-box"
                                   placeholder="Game Engine"
                                   id="engine" name="engine" required
-                                  value={this.state.engine} onChange={this.onChangeEngine}
+                                  value={this.state.game.engine} onChange={this.onChangeEngine}
                         />
                     </div>
 
@@ -198,14 +257,14 @@ export default class CreateGame extends Component {
                         <label>Poster Url: </label><br/>
                         <input
                             type="text" id="posterUrl" name="posterUrl" required
-                            value={this.state.posterUrl} onChange={this.onChangePosterUrl}
+                            value={this.state.game.posterUrl} onChange={this.onChangePosterUrl}
                         />
                     </div>
                     <div className="cover-url">
                         <label>Cover Url: </label><br/>
                         <input
                             type="text" id="coverUrl" name="coverUrl" required
-                            value={this.state.coverUrl} onChange={this.onChangeCoverUrl}
+                            value={this.state.game.coverUrl} onChange={this.onChangeCoverUrl}
                         />
                     </div>
 
@@ -213,7 +272,7 @@ export default class CreateGame extends Component {
                         <label>Trailer Url: </label><br/>
                         <input
                             type="text" id="trailerUrl" name="trailerUrl" required
-                            value={this.state.trailerUrl} onChange={this.onChangeTrailerUrl}
+                            value={this.state.game.trailerUrl} onChange={this.onChangeTrailerUrl}
                         />
                     </div>
 
@@ -221,8 +280,75 @@ export default class CreateGame extends Component {
                         <label>Ad Url: </label><br/>
                         <input
                             type="text" id="adUrl" name="adUrl" required
-                            value={this.state.adUrl} onChange={this.onChangeAdUrl}
+                            value={this.state.game.adUrl} onChange={this.onChangeAdUrl}
                         />
+                    </div>
+
+                    <div className="drop-down">
+                        <select id="platforms" name="platforms" onChange={this.onChangePlatform}>
+                            {
+                                this.state.platforms.map(item => (
+                                    <option key={item.id} value={item.id}>
+                                        {item.name}
+                                    </option>
+                                ))
+                            }
+                        </select>
+                    </div>
+
+                    <div className="drop-down">
+                        <select onChange={this.onChangeSysRequirement} id="sys-requirements" name="sys-requirements">
+                            {
+                                this.state.sysRequirements.map(item => (
+                                    <option key={item.id} value={item.id}>
+                                        {item.cpu}
+                                        {item.gpu}
+                                        {item.memory}
+                                        {item.storage}
+                                        {item.os}
+                                    </option>
+                                ))
+                            }
+                        </select>
+                    </div>
+
+                    <div className="drop-down">
+                        <select id="genres" name="genres" onChange={this.onChangeGenres}>
+                            {
+                                this.state.genres.map(item => (
+                                    <option key={item.id} value={item.id}>
+                                        {item.name}
+                                    </option>
+                                ))
+                            }
+                        </select>
+                    </div>
+
+                    <div className="drop-down">
+                        <select id="modes" name="modes" onChange={this.onChangeModes}>
+                            {
+                                this.state.modes.map(item => (
+                                    <option key={item.id} value={item.id}>
+                                        {item.name}
+                                    </option>
+                                ))
+                            }
+                        </select>
+                    </div>
+
+                    <div className="drop-down">
+                        <select id="pegi-ratings" name="pagi-ratings" onChange={this.onChangePegiRatings}>
+                            {
+                                <option disabled>Select</option>
+                            }
+                            {
+                                this.state.pegiRatings.map(item => (
+                                    <option key={item.id} value={item.id}>
+                                        {item.rating}
+                                    </option>
+                                ))
+                            }
+                        </select>
                     </div>
 
                     <button className="btn-small btn-submit" onClick={this.saveGame}>

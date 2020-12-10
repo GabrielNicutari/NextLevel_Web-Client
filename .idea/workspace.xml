@@ -28,6 +28,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -59,6 +60,8 @@
       <option name="presentableId" value="Default" />
       <updated>1607480091081</updated>
       <workItem from="1607480092756" duration="9500000" />
+      <workItem from="1607515391369" duration="4501000" />
+      <workItem from="1607528201469" duration="38591000" />
     </task>
     <servers />
   </component>
@@ -75,8 +78,39 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="436" y="230" key="EditFileWatcherDialog" timestamp="1607540491492">
+      <screen x="0" y="40" width="1536" height="824" />
+    </state>
+    <state x="436" y="230" key="EditFileWatcherDialog/0.40.1536.824@0.40.1536.824" timestamp="1607540491492" />
+    <state x="549" y="207" key="FileChooserDialogImpl" timestamp="1607529605334">
+      <screen x="0" y="40" width="1536" height="824" />
+    </state>
+    <state x="549" y="207" key="FileChooserDialogImpl/0.40.1536.824@0.40.1536.824" timestamp="1607529605334" />
+    <state width="1515" height="204" key="GridCell.Tab.0.bottom" timestamp="1607523096453">
+      <screen x="0" y="40" width="1536" height="824" />
+    </state>
+    <state width="1515" height="204" key="GridCell.Tab.0.bottom/0.40.1536.824@0.40.1536.824" timestamp="1607523096453" />
+    <state width="1515" height="204" key="GridCell.Tab.0.center" timestamp="1607523096453">
+      <screen x="0" y="40" width="1536" height="824" />
+    </state>
+    <state width="1515" height="204" key="GridCell.Tab.0.center/0.40.1536.824@0.40.1536.824" timestamp="1607523096453" />
+    <state width="1515" height="204" key="GridCell.Tab.0.left" timestamp="1607523096453">
+      <screen x="0" y="40" width="1536" height="824" />
+    </state>
+    <state width="1515" height="204" key="GridCell.Tab.0.left/0.40.1536.824@0.40.1536.824" timestamp="1607523096453" />
+    <state width="1515" height="204" key="GridCell.Tab.0.right" timestamp="1607523096453">
+      <screen x="0" y="40" width="1536" height="824" />
+    </state>
+    <state width="1515" height="204" key="GridCell.Tab.0.right/0.40.1536.824@0.40.1536.824" timestamp="1607523096453" />
+    <state x="425" y="207" key="run.anything.popup" timestamp="1607552991967">
+      <screen x="0" y="40" width="1536" height="824" />
+    </state>
+    <state x="425" y="207" key="run.anything.popup/0.40.1536.824@0.40.1536.824" timestamp="1607552991967" />
   </component>
 </project>
