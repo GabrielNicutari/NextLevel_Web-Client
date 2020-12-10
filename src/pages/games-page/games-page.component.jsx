@@ -20,6 +20,12 @@ class GamesPage extends Component {
       totalItems: null,
       sorting: "id,asc",
 
+      platforms: [],
+      sysRequirements: [],
+      genres: [],
+      modes: [],
+      pegiRatings: [],
+
       loading: undefined,
       done: undefined,
       show: false,
@@ -34,23 +40,40 @@ class GamesPage extends Component {
     this.setState({ loading: undefined });
     this.setState({ done: undefined });
 
-    http
-      .get("games?page=" + currentPage + "&sort=" + sort)
-      .then((response) => {
-        this.setState({ totalPages: response.data.totalPages });
-        this.setState({ totalItems: response.data.totalItems });
-        this.setState({ games: response.data.games });
-        this.setState({ itemsPerPage: response.data.size });
-      })
-      .then(() => {
-        this.setState({ loading: true });
-        setTimeout(() => {
-          this.setState({ done: true });
-        }, 500);
-      })
-      .catch((e) => {
-        console.log(e);
-      });
+    http.all([
+      http.get("games?page=" + currentPage + "&sort=" + sort),
+      http.get("/games/platforms"),
+      http.get("/games/sys-requirements"),
+      http.get("/games/genres"),
+      http.get("/games/modes"),
+      http.get("/games/pegi-rating")
+    ])
+    .then(
+        http.spread(
+            (...responses) => {
+              this.setState({games: responses[0].data.games})
+
+              this.setState({ totalPages: responses[0].data.totalPages })
+              this.setState({ totalItems: responses[0].data.totalItems })
+              this.setState({ itemsPerPage: responses[0].data.size })
+
+              this.setState({platforms: responses[1].data})
+              this.setState({sysRequirements: responses[2].data})
+              this.setState({genres: responses[3].data})
+              this.setState({modes: responses[4].data})
+              this.setState({pegiRatings: responses[5].data})
+            }
+        )
+    )
+    .then(() => {
+    this.setState({ loading: true });
+    setTimeout(() => {
+      this.setState({ done: true });
+    }, 500);
+    })
+   .catch((e) => {
+    console.log(e);
+    });
   }
 
   paginate = (pageNr) => {
@@ -79,6 +102,8 @@ class GamesPage extends Component {
   render() {
     const {games, done, loading, totalItems, currentPage, sorting, itemsPerPage, show,} = this.state;
 
+    console.log(this.state);
+
     return (
       <div className="games-page">
         <div className="games-header">
@@ -96,7 +121,7 @@ class GamesPage extends Component {
               Create Game
             </button>
           </div>
-          <CreateModal show={show} close={this.close} />
+          <CreateModal show={show} close={this.close} state={this.state}/>
         </div>
 
         <div className="games-listings">

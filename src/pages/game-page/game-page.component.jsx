@@ -8,6 +8,8 @@ import {DeleteModal} from "../../components/game-delete/game-delete-modal.compon
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faBuilding, faCalendarDay, faClock, faPowerOff, faStar, faUsers} from "@fortawesome/free-solid-svg-icons";
 import YouTube from 'react-youtube-embed'
+import {faClock} from "@fortawesome/free-solid-svg-icons";
+//import axios from "axios";
 
 class GamePage extends Component {
     constructor(props) {
@@ -26,6 +28,7 @@ class GamePage extends Component {
                 review: "",
                 posterUrl: "",
                 coverUrl: "",
+                trailerUrl: "",
                 adUrl: "",
                 gameHasFieldsById: []
             },
@@ -34,6 +37,12 @@ class GamePage extends Component {
             done: undefined,
             show: false,
             showDelete: false,
+
+            platforms: [],
+            sysRequirements: [],
+            genres: [],
+            modes: [],
+            pegiRatings: []
         }
     }
 
@@ -45,16 +54,27 @@ class GamePage extends Component {
         this.setState({loading: undefined});
         this.setState({done: undefined});
 
-        http
-            .get("/games/" + id)
-            .then((response) => {
-                this.setState({
-                    game: response.data
-                });
-                // this.setState({
-                //     fields: response.data.gameHasFieldsById  //only if we feel like we need it later
-                // })
-            })
+        //getting the data from all the tables that are connected with game{id}
+        http.all([
+                http.get("/games/" + id),
+                http.get("/games/platforms"),
+                http.get("/games/sys-requirements"),
+                http.get("/games/genres"),
+                http.get("/games/modes"),
+                http.get("/games/pegi-rating")
+            ])
+            .then(
+                http.spread(
+                    (...responses) => {
+                        this.setState({game: responses[0].data})
+                        this.setState({platforms: responses[1].data})
+                        this.setState({sysRequirements: responses[2].data})
+                        this.setState({genres: responses[3].data})
+                        this.setState({modes: responses[4].data})
+                        this.setState({pegiRatings: responses[5].data})
+                    }
+                )
+            )
             .then(() => {
                 this.setState({loading: true});
                 setTimeout(() => {
@@ -63,9 +83,9 @@ class GamePage extends Component {
             })
             .catch((e) => {
                 console.log(e);
-            })
-    }
+            });
 
+    }
 
     close = () => this.setState({show: false});
 
@@ -76,7 +96,7 @@ class GamePage extends Component {
     showDeleteModal = () => this.setState({showDelete: true});
 
     render() {
-        const { game, done, loading, show, showDelete } = this.state;
+        const { game, done, loading, show, showDelete} = this.state;
 
         return (
 
@@ -133,7 +153,7 @@ class GamePage extends Component {
                             { show ? <div onClick={this.close} className='back-drop show'/> : <div className='back-drop'/> }
                             <button onClick={ this.showModal } className="btn-medium btn-openModal btn-updateModal">Update Game</button>
                         </div>
-                        <UpdateModal show={show} close={this.close} state={this.state.game}/>
+                        <UpdateModal show={show} close={this.close} state={this.state}/>
 
                         <div className='fields'>
                             <div className='fields-header'>

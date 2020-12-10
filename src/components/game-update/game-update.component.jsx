@@ -4,24 +4,33 @@ import './game-update.styles.scss';
 import { withRouter } from 'react-router-dom';
 
 class UpdateGame extends Component {
+
     constructor(props) {
         super(props);
 
         this.state = {
-            id: null,
-            title: "",
-            description: "",
-            releaseDate: "",
-            developer: "",
-            publisher: "",
-            engine: "",
-            price: "",
-            review: "",
-            posterUrl: "",
-            coverUrl: "",
-            trailerUrl: "",
-            adUrl: "",
-            gameHasFieldsById: []
+            game: {
+                id: null,
+                title: "",
+                description: "",
+                releaseDate: "",
+                developer: "",
+                publisher: "",
+                engine: "",
+                price: "",
+                review: "",
+                posterUrl: "",
+                coverUrl: "",
+                trailerUrl: "",
+                adUrl: "",
+                gameHasFieldsById: []
+            },
+
+            platforms: [],
+            sysRequirements: [],
+            genres: [],
+            modes: [],
+            pegiRatings: []
         };
     }
 
@@ -29,59 +38,59 @@ class UpdateGame extends Component {
         this.setState(this.props.state);
     }
     onChangeTitle = e => {
-        this.setState({title: e.target.value});
+        this.setState({game: {title: e.target.value}});
     }
 
     onChangeDescription = e => {
-        this.setState({description: e.target.value});
+        this.setState({game: {description: e.target.value}});
     }
 
     onChangeReleaseDate = e => {
-        this.setState({releaseDate: e.target.value})
+        this.setState({game: {releaseDate: e.target.value}})
     }
 
     onChangeDeveloper = e => {
-        this.setState({developer: e.target.value})
+        this.setState({game: {developer: e.target.value}})
     }
 
     onChangePublisher = e => {
-        this.setState({publisher: e.target.value})
+        this.setState({game: {publisher: e.target.value}})
     }
 
     onChangeEngine = e => {
-        this.setState({engine: e.target.value})
+        this.setState({game: {engine: e.target.value}})
     }
 
     onChangePrice = e => {
-        this.setState({price: e.target.value})
+        this.setState({game: {price: e.target.value}})
     }
 
     onChangeReview = e => {
-        this.setState({review: e.target.value})
+        this.setState({game: {review: e.target.value}})
     }
 
     onChangePosterUrl =  e => {
-        this.setState({posterUrl: e.target.value})
+        this.setState({game: {posterUrl: e.target.value}})
     }
 
     onChangeCoverUrl = e => {
-        this.setState({coverUrl: e.target.value})
+        this.setState({game: {coverUrl: e.target.value}})
     }
 
     onChangeTrailerUrl = e => {
-        this.setState({trailerUrl: e.target.value})
+        this.setState({game: {trailerUrl: e.target.value}})
     }
 
     onChangeAdUrl = e => {
-        this.setState({adUrl: e.target.value})
+        this.setState({game: {adUrl: e.target.value}})
     }
 
     saveGame = () => {
 
         http
             .put(
-                "/games/update/" + this.state.id,
-                this.state
+                "/games/update/" + this.state.game.id,
+                this.state.game
             )
             .then((response) => {
                 this.props.history.go(0);
@@ -97,7 +106,7 @@ class UpdateGame extends Component {
     }
 
     render() {
-
+        console.log(this.state);
         return(
             <div className='container'>
 
@@ -106,7 +115,7 @@ class UpdateGame extends Component {
                         <div>
                             <label>Title</label><br/>
                             <input
-                                type="text" id="title" required value={this.state.title}
+                                type="text" id="title" required value={this.state.game.title}
                                 onChange={this.onChangeTitle} name="title"
                             />
                         </div>
@@ -115,7 +124,7 @@ class UpdateGame extends Component {
                             <label>Description: </label><br/>
                             <textarea className="text-box"
                                       placeholder="Game Description"
-                                      value={this.state.description} onChange={this.onChangeDescription}
+                                      value={this.state.game.description} onChange={this.onChangeDescription}
                                       id="description" name="description"
                             />
                         </div>
@@ -128,14 +137,14 @@ class UpdateGame extends Component {
                             <label>ReleaseDate</label><br/>
                             <input
                                 type="date" id="releaseDate" required
-                                value={this.state.releaseDate} onChange={this.onChangeReleaseDate} name="releaseDate"
+                                value={this.state.game.releaseDate} onChange={this.onChangeReleaseDate} name="releaseDate"
                             />
                         </div>
                         <div>
                             <label>Review: </label><br/>
                             <input
                                 type="number" min={0} step={0.1} required
-                                value={this.state.review} onChange={this.onChangeReview}
+                                value={this.state.game.review} onChange={this.onChangeReview}
                                 name="review" id="review"
                             />
                         </div>
@@ -144,7 +153,7 @@ class UpdateGame extends Component {
                             <label>Price: </label><br/>
                             <input
                                 type="number" min={0} step={0.01} required
-                                value={this.state.price} onChange={this.onChangePrice}
+                                value={this.state.game.price} onChange={this.onChangePrice}
                                 id="price" name="price"
                             />
                         </div>
@@ -155,7 +164,7 @@ class UpdateGame extends Component {
                         <textarea className="text-box"
                                   placeholder="Game Developer"
                                   id="developer" name="developer" required
-                                  value={this.state.developer} onChange={this.onChangeDeveloper}
+                                  value={this.state.game.developer} onChange={this.onChangeDeveloper}
                         />
                     </div>
 
@@ -164,7 +173,7 @@ class UpdateGame extends Component {
                         <textarea className="text-box"
                                   placeholder="Game Publisher"
                                   id="publisher" name="publisher" required
-                                  value={this.state.publisher} onChange={this.onChangePublisher}
+                                  value={this.state.game.publisher} onChange={this.onChangePublisher}
                         />
                     </div>
 
@@ -173,7 +182,7 @@ class UpdateGame extends Component {
                         <textarea className="text-box"
                                   placeholder="Game Engine"
                                   id="engine" name="engine" required
-                                  value={this.state.engine} onChange={this.onChangeEngine}
+                                  value={this.state.game.engine} onChange={this.onChangeEngine}
                         />
                     </div>
 
@@ -182,14 +191,14 @@ class UpdateGame extends Component {
                         <label>Poster Url: </label><br/>
                         <input
                             type="text" id="posterUrl" name="posterUrl" required
-                            value={this.state.posterUrl} onChange={this.onChangePosterUrl}
+                            value={this.state.game.posterUrl} onChange={this.onChangePosterUrl}
                         />
                     </div>
                     <div className="cover-url">
                         <label>Cover Url: </label><br/>
                         <input
                             type="text" id="coverUrl" name="coverUrl" required
-                            value={this.state.coverUrl} onChange={this.onChangeCoverUrl}
+                            value={this.state.game.coverUrl} onChange={this.onChangeCoverUrl}
                         />
                     </div>
 
@@ -197,7 +206,7 @@ class UpdateGame extends Component {
                         <label>Trailer Url: </label><br/>
                         <input
                             type="text" id="trailerUrl" name="trailerUrl" required
-                            value={this.state.trailerUrl} onChange={this.onChangeTrailerUrl}
+                            value={this.state.game.trailerUrl} onChange={this.onChangeTrailerUrl}
                         />
                     </div>
 
@@ -205,9 +214,29 @@ class UpdateGame extends Component {
                         <label>Ad Url: </label><br/>
                         <input
                             type="text" id="adUrl" name="adUrl"
-                            value={this.state.adUrl} onChange={this.onChangeAdUrl}
+                            value={this.state.game.adUrl} onChange={this.onChangeAdUrl}
                         />
                     </div>
+
+                    <div className="drop-down">
+                        <select>
+                            {
+                                this.state.game.gameHasFieldsById.length > 0 ?
+                                    <option key={this.state.game.gameHasFieldsById[0].platformByPlatformId.id} disabled>
+                                        default: {this.state.game.gameHasFieldsById[0].platformByPlatformId.name}
+                                    </option> : null
+                            }
+                            {
+                            this.state.platforms.map(item => (
+                                <option key={item.id}>
+                                   {item.name}
+                                </option>
+                            ))
+                            }
+                        </select>
+                    </div>
+
+
 
                     <button className="btn-small btn-submit" type="submit" onClick={this.props.close}>
                         Submit
