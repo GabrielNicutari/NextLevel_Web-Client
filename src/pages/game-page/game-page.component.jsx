@@ -98,6 +98,7 @@ class GamePage extends Component {
     render() {
         const { game, done, loading, show, showDelete} = this.state;
 
+        const link = game.trailerUrl;
 
         return (
 
@@ -167,7 +168,7 @@ class GamePage extends Component {
                             <div className='fields-item'>
 
                                 <div className='game-description'>
-                                    <YouTube className='youtube' id='c0i88t0Kacs' />
+                                    <YouTube className='youtube' id={link}/>
                                     {/*{game.trailerUrl}*/}
                                 </div>
 
