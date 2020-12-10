@@ -98,11 +98,15 @@ class GamePage extends Component {
     render() {
         const { game, done, loading, show, showDelete} = this.state;
 
+
         return (
+
+
 
             <div className='game-page' style={{
                 backgroundImage: `url(${game.coverUrl})`
             }} >
+
                 {!done?
                     (<Loading loading={loading} />)
                     :
@@ -215,7 +219,9 @@ class GamePage extends Component {
                 <SocialFooter/>
             </div>
         );
+
     }
+
 }
 
 export default GamePage;

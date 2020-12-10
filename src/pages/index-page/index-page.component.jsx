@@ -39,7 +39,7 @@ class HomePage extends Component {
                         }}
                         >
                         </div>
-                        <div className='slide slide2' style={{
+                        <div className='slide slide2'  style={{
                             backgroundImage: "url(" + "https://i.imgur.com/K5eJl84.jpg" + ")",
                             backgroundPosition: 'center',
                             backgroundSize: 'cover',
@@ -76,7 +76,7 @@ class HomePage extends Component {
 
                     <button className="btn-large btn-cta" onClick={(e) => {
                         e.preventDefault();
-                        window.location.href='http://localhost:8081/games/1';
+                        window.location.href='/games/1';
                     }}>BUY NOW!</button>
 
                 </div>
@@ -96,7 +96,7 @@ class HomePage extends Component {
 
                     <button className="btn-large btn-cta btn-cta2" onClick={(e) => {
                         e.preventDefault();
-                        window.location.href='http://localhost:8081/games/1';
+                        window.location.href='/games/276';
                     }}>BUY NOW!</button>
 
                 </div>
