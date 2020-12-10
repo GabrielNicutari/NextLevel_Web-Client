@@ -76,7 +76,7 @@ class HomePage extends Component {
 
                     <button className="btn-large btn-cta" onClick={(e) => {
                         e.preventDefault();
-                        window.location.href='/games/1';
+                        window.location.href='https://next-level-web-client.herokuapp.com/games/1';
                     }}>BUY NOW!</button>
 
                 </div>
@@ -96,7 +96,7 @@ class HomePage extends Component {
 
                     <button className="btn-large btn-cta btn-cta2" onClick={(e) => {
                         e.preventDefault();
-                        window.location.href='/games/276';
+                        window.location.href='https://next-level-web-client.herokuapp.com/games/276';
                     }}>BUY NOW!</button>
 
                 </div>
