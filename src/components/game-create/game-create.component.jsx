@@ -176,10 +176,12 @@ export default class CreateGame extends Component {
         return(
             <div className='container'>
 
-                <form>
+                <form className="form">
                     <div className="field1-2">
                         <div>
-                            <label>Title</label><br/>
+                            <label style={{
+                                color: 'white'
+                            }}>Title</label><br/>
                             <input
                                 type="text" id="title" required value={this.state.game.title}
                                 onChange={this.onChangeTitle} name="title"
@@ -199,8 +201,8 @@ export default class CreateGame extends Component {
 
                     <div className="field4-5-6">
 
-                        <div>
-                            <label>ReleaseDate</label><br/>
+                        <div >
+                            <label>ReleaseDate</label ><br/>
                             <input
                                 type="date" id="releaseDate" required
                                 value={this.state.game.releaseDate} onChange={this.onChangeReleaseDate} name="releaseDate"
@@ -285,7 +287,7 @@ export default class CreateGame extends Component {
                     </div>
 
                     <div className="drop-down">
-                        <select id="platforms" name="platforms" onChange={this.onChangePlatform}>
+                        <select id="platforms" name="platforms" onChange={this.onChangePlatform} >
                             {
                                 this.state.platforms.map(item => (
                                     <option key={item.id} value={item.id}>

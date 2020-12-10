@@ -10,7 +10,7 @@ form div {
 
 input, textarea {
   border: none;
-  border-bottom: #838383 solid 2px;
+  border-bottom: white solid 2px;
   outline: none;
   padding: 1vh 0;
   margin: 1vh 1vh 1vh 0;
@@ -19,7 +19,7 @@ input, textarea {
 
 input:hover, textarea:hover {
   transition: border-bottom .1s;
-  border-bottom: #fa897b solid 2px;
+  border-bottom: #e72510 solid 2px;
 }
 
 .field1-2 {
@@ -108,6 +108,39 @@ input:hover, textarea:hover {
     width: 26rem;
   }
 
+}
+
+.form label {
+  color: white !important;
+}
+
+.text {
+  background-color: #232323;
+  color: white;
+}
+
+.text-box {
+  background-color: #232323;
+  color: white;
+}
+
+number {
+  background-color: #232323;
+  color: white;
+}
+
+input {
+  background-color: #232323;
+  color: white;
+}
+
+select {
+  background-color: #232323;
+  color: white;
+}
+
+date {
+  width: 15vw;
 }
 
 

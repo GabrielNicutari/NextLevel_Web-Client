@@ -1,7 +1,7 @@
 form div {
     margin: 4vh 0;
     font-size: 1.5rem;
-    color: #292929;
+    color: white;
 }
 
 input, textarea {
@@ -18,12 +18,12 @@ input, textarea {
 
 input:focus, textarea:focus {
     transition: border-bottom .1s;
-    border-bottom: #FEC13E solid 2px;
+    border-bottom: #e72510 solid 2px;
 }
 
 input:hover, textarea:hover {
     transition: border-bottom .1s;
-    border-bottom: #FEC13E solid 2px;
+    border-bottom: #e72510 solid 2px;
 }
 
 .field1-2 {
@@ -47,5 +47,33 @@ input:hover, textarea:hover {
 .drop-down {
     width: 5vw;
     height: 5vh;
+}
+
+.form {
+    color: white;
+}
+
+.text {
+    background-color: #232323;
+    color: white;
+}
+
+.text-box {
+    background-color: #232323;
+    color: white;
+}
+number {
+    background-color: #232323;
+    color: white;
+}
+
+input {
+    background-color: #232323;
+    color: white;
+}
+
+select {
+    background-color: #232323;
+    color: white;
 }
 
