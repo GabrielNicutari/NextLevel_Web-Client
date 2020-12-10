@@ -30,7 +30,7 @@
 }
 
 .bannerText {
-  font-family: Roboto;
+  font-family: Mason Serif Regular;
   font-style: normal;
   font-weight: bold;
   font-size: 24px;
@@ -52,19 +52,22 @@
 
 .btn-cta {
   position: relative;
-  top: 15px;
-  font-size: 14px;
-  padding: 0.5rem 1.8rem;
   color: black;
   border: none;
   outline: none;
   cursor: pointer;
-  width: 30%;
+  width: 10%;
   height: 50px;
-  left: 0px;
+  left: 57%;
   margin: 0;
   align-items: center;
   vertical-align: center;
+  background-color: #e72510;
+  top: -530px;
+  font-weight: bold;
+  font-size:  25px;
+  font-family: Arial, Helvetica, sans-serif;
+
 }
 
 .featuredRecipes {
@@ -75,22 +78,24 @@
 
 .appBanner {
   width: 100%;
-  height: 335px;
-  background: linear-gradient(273.85deg, #FFDD94 1.04%, rgba(255, 230, 176, 0.8) 93.82%);
+  height: 400px;
+  background: grey;
+  background-image: url("https://scufgaming.com/media/wysiwyg/Content/MHW/mhwbannermobile.jpg");
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-blend-mode: multiply;
 }
 
 .phoneImage {
-  background: url("https://i.imgur.com/EF3EBVb.png");
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  background: url("https://purepng.com/public/uploads/large/purepng.com-witcher-geralt-of-riviawitcherthe-witcherandrzej-sapkowskiwriterfantasy-serieswitcher-geralt-of-riviawitchersbooksmonster-hunterssupernaturaldeadly-beastsseriesvideo-gamesxbox-1701528660783gykhu.png");
 
   position: relative;
   width: 500px;
-  height: 466px;
+  height: 600px;
   left: 20%;
-  top: -50px;
+  top: -200px;
   background-size: cover;
   background-position: center;
   margin-bottom: 5px;
@@ -103,7 +108,10 @@
 
 .highLight {
   color: white;
-  font-size: 48px;
+  font-size: 90px;
+  margin-bottom: 50px;
+  font-weight: bold;
+  color: #e72510;
 }
 
 .ctaApp {
@@ -111,16 +119,18 @@
   position: relative;
 
   width: 30%;
-  left: 45%;
-  top: -130%;
+  left: 47%;
+  top: -560px;
+  text-align: center;
 }
 
 .ctaText {
   font-family: Roboto;
   font-style: normal;
   font-weight: bold;
-  font-size: 48px;
+  font-size: 60px;
   line-height: 35px;
+  color: white;
 }
 
 .ctaText2 {
@@ -129,7 +139,7 @@
   font-weight: bold;
   font-size: 24px;
   line-height: 20px;
-  color: #252525;
+  color: white;
 }
 
 .ctaApp2 {
@@ -175,4 +185,51 @@
   margin-bottom: 5px;
 }
 
+.appBanner2 {
+  position: relative;
+  top: 400px;
+  padding-bottom: 100px;
+  margin-bottom: 200px;
+  background-image: url("https://i.imgur.com/vBL6a5v.jpg");
+  background-blend-mode: unset;
+}
 
+.phoneImage2 {
+  background: url("https://i.imgur.com/i4AmOfx.png");
+}
+
+.ctaText3 {
+  color: black;
+}
+
+.highLight2 {
+  color: blue;
+}
+
+.blackText {
+  color: black;
+}
+
+.btn-cta2 {
+  background-color: blue;
+  color: white;
+}
+
+.bannerSlider {
+  height: 600px;
+}
+
+.slide {
+}
+
+.slide1 {
+  background: url("https://wallpaperaccess.com/full/2461309.jpg");
+}
+
+.slide2 {
+  background: url("https://wallpaperaccess.com/full/2461288.jpg");
+}
+
+.slide3 {
+  background: url("https://wallpaperaccess.com/full/2461317.jpg") !important;
+}
