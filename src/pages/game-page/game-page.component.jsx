@@ -6,7 +6,8 @@ import './game-page.styles.scss';
 import {UpdateModal} from "../../components/game-update/game-update-modal.component";
 import {DeleteModal} from "../../components/game-delete/game-delete-modal.component";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faClock} from "@fortawesome/free-solid-svg-icons";
+import {faBuilding, faCalendarDay, faClock, faPowerOff, faStar, faUsers} from "@fortawesome/free-solid-svg-icons";
+import YouTube from 'react-youtube-embed'
 
 class GamePage extends Component {
     constructor(props) {
@@ -72,13 +73,16 @@ class GamePage extends Component {
 
     closeDelete = () => this.setState({showDelete: false});
 
-    showDeleteModal = () => this.setState({showDelete: true})
+    showDeleteModal = () => this.setState({showDelete: true});
 
     render() {
         const { game, done, loading, show, showDelete } = this.state;
 
         return (
-            <div className='game-page'>
+
+            <div className='game-page' style={{
+                backgroundImage: `url(${game.coverUrl})`
+            }} >
                 {!done?
                     (<Loading loading={loading} />)
                     :
@@ -94,16 +98,28 @@ class GamePage extends Component {
                                 {game.title}
                             </span>
 
+                            <p className='game-rating'>
+                                {game.review}/10
+                                <FontAwesomeIcon icon={faStar} className="Icon clockIcon" size={"1x"}/>
+                            </p>
+
                             <div className='game-description'>
                                 {game.description}
                             </div>
 
                             <div className="item">
-                                    <p ><FontAwesomeIcon icon={faClock} className="clockIcon" size={"1x"}/>
-                                        Prep time: <span className="highLight2">20 minutes</span>
-                                        Cook time: <span className="highLight2">30 minutes</span>
-                                        Total time: <span className="highLight2">50 minutes</span>
-                                    </p>
+                                <p ><FontAwesomeIcon icon={faCalendarDay} className="Icon clockIcon" size={"1x"}/>
+                                    ReleaseDate <span className="highLight2">{game.releaseDate}</span>
+
+                                    <FontAwesomeIcon icon={faUsers} className="Icon clockIcon" size={"1x"}/>
+                                    Developer <span className="highLight2">{game.developer}</span>
+
+                                    <FontAwesomeIcon icon={faBuilding} className="Icon clockIcon" size={"1x"}/>
+                                    Publisher <span className="highLight2">{game.publisher}</span>
+
+                                    <FontAwesomeIcon icon={faPowerOff} className="Icon clockIcon" size={"1x"}/>
+                                    Engine <span className="highLight2">{game.engine}</span>
+                                </p>
                             </div>
                         </div>
 
@@ -121,37 +137,23 @@ class GamePage extends Component {
 
                         <div className='fields'>
                             <div className='fields-header'>
-                                Fields
+                                Release Trailer
                             </div>
 
                             <div className='fields-item'>
-                                <div className='game-description'>
-                                    {game.releaseDate}
-                                </div>
 
                                 <div className='game-description'>
-                                    {game.developer}
+                                    <YouTube className='youtube' id='c0i88t0Kacs' />
+                                    {/*{game.trailerUrl}*/}
                                 </div>
 
-                                <div className='game-description'>
-                                    {game.publisher}
-                                </div>
+                                {/*<div className='game-description'>*/}
+                                {/*    {game.price}*/}
+                                {/*</div>*/}
 
-                                <div className='game-description'>
-                                    {game.engine}
-                                </div>
-
-                                <div className='game-description'>
-                                    {game.price}
-                                </div>
-
-                                <div className='game-description'>
-                                    {game.review}
-                                </div>
-
-                                <div className='game-description'>
-                                    {game.trailerUrl}
-                                </div>
+                                {/*<div className='game-description'>*/}
+                                {/*    {game.review}*/}
+                                {/*</div>*/}
                             </div>
                         </div>
 
