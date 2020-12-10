@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 import "./index-page.styles.scss";
 import SocialFooter from "../../components/social-footer/social-footer.component";
-//import { Carousel } from "react-bootstrap/Carousel";
+import { Carousel } from "react-bootstrap";
 
 class HomePage extends Component {
   constructor(props) {
@@ -15,7 +15,7 @@ class HomePage extends Component {
     return (
       <div className="homePage">
         <div className="bannerImage">
-          {/* <Carousel>
+            <Carousel>
             <Carousel.Item interval={1000}>
               <img
                 className="d-block w-100"
@@ -54,7 +54,7 @@ class HomePage extends Component {
                 </p>
               </Carousel.Caption>
             </Carousel.Item>
-          </Carousel> */}
+          </Carousel>
         </div>
 
         <div className="featuredRecipes"></div>
