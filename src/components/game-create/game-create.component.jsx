@@ -200,6 +200,9 @@ export default class CreateGame extends Component {
                             <label style={{
                                 color: 'white'
                             }}>Title</label><br/>
+
+                            <label>Title1</label><br/>
+
                             <input
                                 type="text" id="title" required value={this.state.game.title}
                                 onChange={this.onChangeTitle} name="title"
