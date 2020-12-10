@@ -103,7 +103,7 @@ class GamesPage extends Component {
   render() {
     const {games, done, loading, totalItems, currentPage, sorting, itemsPerPage, show,} = this.state;
 
-    console.log(this.state);
+    // console.log(this.state);
 
     return (
       <div className="games-page">

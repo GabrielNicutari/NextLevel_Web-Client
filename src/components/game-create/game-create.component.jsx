@@ -161,24 +161,47 @@ export default class CreateGame extends Component {
             pegiRatingsByPegiRatingId: this.state.pegiRatingsByPegiRatingId
         }
 
-        http.post("/games/create", newGame)
-            .then(response => {
-                this.setState({game: {...this.state.game, id: response.data.id}});
-            })
-            .catch(e => {
-                console.log(e);
-            })
+        // http.post("/games/create", newGame)
+        //     .then(response => {
+        //         console.log(response.data.id);
+        //         this.setState({game: {...this.state.game, id: response.data.id}});
+        //         console.log(response.data.id);
+        //     })
+        //     .catch(e => {
+        //         console.log(e);
+        //     })
+        //
+        // http.post("/games/insertIntoGameHasFields", gameHasFields)
+        //     .then(response => {
+        //         console.log(response.data);
+        //     })
+        //     .catch(e => {
+        //         console.log(e);
+        //     })
 
-        http.post("/games/insertIntoGameHasFields", gameHasFields)
-            .then(response => {
-                console.log(response.data);
-            })
-            .catch(e => {
-                console.log(e);
-            })
-
-        this.setState({game: newGame});
-    }
+         http.all([
+             http.post("/games/create", newGame),
+             http.post("/games/insertIntoGameHasFields", gameHasFields)
+         ])
+             .then(
+                 http.spread(
+                     (...responses) => {
+                        this.setState({game: {...this.state.game, id: responses[0].data.id}});
+                        this.setState({game: {...this.state.game, gameHasFieldsById: responses[2].data}});
+                     }
+                 )
+             )
+             // .then(() => {
+             //     http.post("/games/insertIntoGameHasFields", gameHasFields)
+             //         .then(r => {
+             //             // this.setState({game: {...this.state.game, id: r.data.id}});
+             //             console.log(r.data);
+             //         })
+             // })
+             .catch((e) => {
+                 console.log(e);
+             });
+     }
 
     saveGame = () => {
 
@@ -189,7 +212,7 @@ export default class CreateGame extends Component {
     }
 
     render() {
-        console.log("state" , this.state);
+        // console.log("state" , this.state);
 
         return(
             <div className='container'>
