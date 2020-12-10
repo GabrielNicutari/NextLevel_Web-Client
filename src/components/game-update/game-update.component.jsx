@@ -37,53 +37,55 @@ class UpdateGame extends Component {
     componentDidMount() {
         this.setState(this.props.state);
     }
+
     onChangeTitle = e => {
-        this.setState({game: {title: e.target.value}});
+        this.setState({game: {...this.state.game, title: e.target.value}});
     }
 
     onChangeDescription = e => {
-        this.setState({game: {description: e.target.value}});
+        this.setState({game: {...this.state.game, description: e.target.value}});
     }
 
     onChangeReleaseDate = e => {
-        this.setState({game: {releaseDate: e.target.value}})
+        this.setState({game: {...this.state.game, releaseDate: e.target.value}})
     }
 
     onChangeDeveloper = e => {
-        this.setState({game: {developer: e.target.value}})
+        this.setState({game: {...this.state.game, developer: e.target.value}})
     }
 
     onChangePublisher = e => {
-        this.setState({game: {publisher: e.target.value}})
+        this.setState({game: {...this.state.game, publisher: e.target.value}})
     }
 
     onChangeEngine = e => {
-        this.setState({game: {engine: e.target.value}})
+        this.setState({game: {...this.state.game, engine: e.target.value}})
     }
 
     onChangePrice = e => {
-        this.setState({game: {price: e.target.value}})
+        this.setState({game: {...this.state.game, price: e.target.value}})
     }
 
     onChangeReview = e => {
-        this.setState({game: {review: e.target.value}})
+        this.setState({game: {...this.state.game, review: e.target.value}})
     }
 
     onChangePosterUrl =  e => {
-        this.setState({game: {posterUrl: e.target.value}})
+        this.setState({game: {...this.state.game, posterUrl: e.target.value}})
     }
 
     onChangeCoverUrl = e => {
-        this.setState({game: {coverUrl: e.target.value}})
+        this.setState({game: {...this.state.game, coverUrl: e.target.value}})
     }
 
     onChangeTrailerUrl = e => {
-        this.setState({game: {trailerUrl: e.target.value}})
+        this.setState({game: {...this.state.game, trailerUrl: e.target.value}})
     }
 
     onChangeAdUrl = e => {
-        this.setState({game: {adUrl: e.target.value}})
+        this.setState({game: {...this.state.game, adUrl: e.target.value}})
     }
+
 
     saveGame = () => {
 
@@ -218,23 +220,23 @@ class UpdateGame extends Component {
                         />
                     </div>
 
-                    <div className="drop-down">
-                        <select>
-                            {
-                                this.state.game.gameHasFieldsById.length > 0 ?
-                                    <option key={this.state.game.gameHasFieldsById[0].platformByPlatformId.id} disabled>
-                                        default: {this.state.game.gameHasFieldsById[0].platformByPlatformId.name}
-                                    </option> : null
-                            }
-                            {
-                            this.state.platforms.map(item => (
-                                <option key={item.id}>
-                                   {item.name}
-                                </option>
-                            ))
-                            }
-                        </select>
-                    </div>
+                    {/*<div className="drop-down">*/}
+                    {/*    <select>*/}
+                    {/*        {*/}
+                    {/*            this.state.game.gameHasFieldsById.length > 0 ?*/}
+                    {/*                <option key={this.state.game.gameHasFieldsById[0].platformByPlatformId.id} disabled>*/}
+                    {/*                    default: {this.state.game.gameHasFieldsById[0].platformByPlatformId.name}*/}
+                    {/*                </option> : null*/}
+                    {/*        }*/}
+                    {/*        {*/}
+                    {/*        this.state.platforms.map(item => (*/}
+                    {/*            <option key={item.id}>*/}
+                    {/*               {item.name}*/}
+                    {/*            </option>*/}
+                    {/*        ))*/}
+                    {/*        }*/}
+                    {/*    </select>*/}
+                    {/*</div>*/}
 
 
 

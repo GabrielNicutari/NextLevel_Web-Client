@@ -8,7 +8,7 @@ export default class CreateGame extends Component {
 
         this.state = {
             game: {
-                id: null,
+                id: "",
                 title: "",
                 description: "",
                 releaseDate: "",
@@ -38,18 +38,33 @@ export default class CreateGame extends Component {
         };
     }
 
-    fetchData = async () => {
-
+    componentDidMount() {
+        this.fetchData();
+        // this.setState({game: {...this.state.game, id: this.props.state.game.id}});
     }
 
-    componentDidMount() {
-        // this.setState({game: {...this.state.game, id: this.props.state.game.id}});
-        this.setState({platforms: this.props.state.platforms});
-        this.setState({sysRequirements: this.props.state.sysRequirements});
-        this.setState({genres: this.props.state.genres});
-        this.setState({modes: this.props.state.modes});
-        this.setState({pegiRatings: this.props.state.pegiRatings});
-        this.forceUpdate();
+    fetchData() {
+        http.all([
+            http.get("/games/platforms"),
+            http.get("/games/sys-requirements"),
+            http.get("/games/genres"),
+            http.get("/games/modes"),
+            http.get("/games/pegi-rating")
+        ])
+        .then(
+            http.spread(
+                (...responses) => {
+                    this.setState({platforms: responses[0].data})
+                    this.setState({sysRequirements: responses[1].data})
+                    this.setState({genres: responses[2].data})
+                    this.setState({modes: responses[3].data})
+                    this.setState({pegiRatings: responses[4].data})
+                }
+            )
+        )
+        .catch((e) => {
+            console.log(e);
+        });
     }
 
     onChangeTitle = e => {
@@ -120,8 +135,7 @@ export default class CreateGame extends Component {
         this.setState({pegiRatingsByPegiRatingId: {id: e.target.value}})
     }
 
-
-    saveGame = () => {
+     handleSubmit= () => {
 
         let newGame = {
             title: this.state.game.title,
@@ -138,7 +152,6 @@ export default class CreateGame extends Component {
             adUrl: this.state.game.adUrl
         }
 
-
         let gameHasFields = {
             gameByGameId: this.state.game.id,
             platformByPlatformId: this.state.platformByPlatformId,
@@ -148,25 +161,30 @@ export default class CreateGame extends Component {
             pegiRatingsByPegiRatingId: this.state.pegiRatingsByPegiRatingId
         }
 
-
-
         http.post("/games/create", newGame)
-            .then(r => r.json())
-                .then(data => {
-                    this.setState({game: {...this.state.game, id: data.id}});
-                })
-            .then(() =>{
-                console.log();
-                setTimeout(() => {console.log("hi")},5000)
+            .then(response => {
+                this.setState({game: {...this.state.game, id: response.data.id}});
             })
-
-
-            .then(() => http.post("/games/insertIntoGameHasFields", gameHasFields)
-                .then(() => {console.log("hi")})
-                )
             .catch(e => {
                 console.log(e);
             })
+
+        http.post("/games/insertIntoGameHasFields", gameHasFields)
+            .then(response => {
+                console.log(response.data);
+            })
+            .catch(e => {
+                console.log(e);
+            })
+
+        this.setState({game: newGame});
+    }
+
+    saveGame = () => {
+
+    }
+
+    saveFields = () => {
 
     }
 
@@ -299,7 +317,7 @@ export default class CreateGame extends Component {
                     </div>
 
                     <div className="drop-down">
-                        <select onChange={this.onChangeSysRequirement} id="sys-requirements" name="sys-requirements">
+                        <select onChange={this.onChangeSysRequirement} className='sys' id="sys-requirements" name="sys-requirements">
                             {
                                 this.state.sysRequirements.map(item => (
                                     <option key={item.id} value={item.id}>
@@ -353,7 +371,7 @@ export default class CreateGame extends Component {
                         </select>
                     </div>
 
-                    <button className="btn-small btn-submit" onClick={this.saveGame}>
+                    <button className="btn-small btn-submit" onClick={this.handleSubmit}>
                         Submit
                     </button>
 

@@ -122,7 +122,7 @@ class GamesPage extends Component {
               Create Game
             </button>
           </div>
-          <CreateModal show={show} close={this.close} state={this.state}/>
+          <CreateModal show={show} close={this.close}/>
         </div>
 
         <div className="games-listings">
