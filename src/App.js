@@ -2,6 +2,7 @@ import React, { Component } from "react";
 
 import "./App.scss";
 import "fontsource-roboto";
+import '@morpheus-ui/fonts';
 
 import { Switch, Route } from "react-router-dom";
 

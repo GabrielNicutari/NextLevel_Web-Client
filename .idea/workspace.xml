@@ -38,6 +38,7 @@
       <change afterPath="$PROJECT_DIR$/src/components/carousel/carousel.component.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/header/header.component.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/header.component.jsx" afterDir="false" />
@@ -48,6 +49,15 @@
       <change beforePath="$PROJECT_DIR$/src/assets/logo.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/logo.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/header/header.styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/header.styles.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/index-page/index-page.component.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index-page/index-page.component.jsx" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/social-footer/social-footer.component.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/social-footer/social-footer.component.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/social-footer/social-footer.styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/social-footer/social-footer.styles.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/index-page/index-page.component.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index-page/index-page.component.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/index-page/index-page.styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index-page/index-page.styles.scss" afterDir="false" />
+>>>>>>> Gameboxes
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -73,7 +83,11 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+<<<<<<< HEAD
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/carousel" />
+=======
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../WBYC_Web-Client" />
+>>>>>>> Gameboxes
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -120,8 +134,13 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1607480091081</updated>
+<<<<<<< HEAD
       <workItem from="1607480092756" duration="10855000" />
       <workItem from="1607530478248" duration="5520000" />
+=======
+      <workItem from="1607480092756" duration="9500000" />
+      <workItem from="1607562583825" duration="9959000" />
+>>>>>>> Gameboxes
     </task>
     <servers />
   </component>
@@ -144,9 +163,16 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
+<<<<<<< HEAD
     <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1607548393794">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1607548393794" />
+=======
+    <state x="2660" y="275" key="FileChooserDialogImpl" timestamp="1607567225856">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2660" y="275" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1607567225856" />
+>>>>>>> Gameboxes
   </component>
 </project>

@@ -4,9 +4,9 @@
 
 .social-media-block {
   //background: rgb(245,245,245);
-  //background: linear-gradient(90deg, rgb(245, 245, 245) 0%, rgba(200, 200, 200, 0.41) 100%);
-  background: #d7d2cb;
+  background: linear-gradient(307.42deg, #E9E9E9 23.93%, rgba(233, 233, 233, 0) 91.63%);
   text-align: center;
+  height: 286px;
 }
 
 .follow-us {
@@ -18,6 +18,10 @@
   font-size: 72px;
   line-height: 84px;
   color: white;
+  margin-bottom: 20px;
+  outline: black;
+  outline-width: 15px;
+  color: black;
 }
 
 .icon {
@@ -31,4 +35,24 @@
     color: #e72510;
     transition: all 0.2s ease;
   }
+}
+
+.icon path {
+  stroke: black;
+  stroke-width: 15px;
+}
+
+.adImage {
+  background: url("https://i.imgur.com/MgNnsiT.png");
+
+  position: relative;
+  width: 600px;
+  height: 600px;
+  left: 60%;
+  top: -265px;
+  margin-bottom: 5px;
+  background-repeat: no-repeat;
+  position: relative;
+  width: 500px;
+  height: 600px;
 }
