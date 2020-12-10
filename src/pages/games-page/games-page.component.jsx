@@ -7,6 +7,7 @@ import Pagination from "../../components/pagination/pagination.component";
 import { CreateModal } from "../../components/game-create/game-create-modal.component";
 
 import "./games-page.styles.scss";
+import SocialFooter from "../../components/social-footer/social-footer.component";
 
 class GamesPage extends Component {
   constructor(props) {
@@ -136,6 +137,8 @@ class GamesPage extends Component {
           <button className="btn-mini btn-sort" onClick={this.sortToggle}>
             <span>Sort: {sorting}</span>
           </button>
+
+
         </div>
 
         <Pagination
@@ -150,6 +153,8 @@ class GamesPage extends Component {
         ) : (
           <GameList games={games} />
         )}
+
+        <SocialFooter/>
       </div>
     );
   }

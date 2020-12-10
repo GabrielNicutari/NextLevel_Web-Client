@@ -8,6 +8,7 @@
   display: flex;
   justify-content: center;
   padding: 10vh 10vh 10vh 10vh;
+  height: 356px;
 }
 
 .grid-header {
@@ -43,5 +44,17 @@
 
     color: #e72510;
     transition: all 0.2s ease;
+  }
+}
+.logo-container {
+  height: 100%;
+  width: 50px;
+
+  .logo {
+    height: 85%;
+    position: relative;
+    left: 50%;
+    top: 30%;
+    transform: translate(-50%, -50%);
   }
 }

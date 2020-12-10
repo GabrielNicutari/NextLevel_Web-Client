@@ -8,13 +8,15 @@ import { faYoutube } from "@fortawesome/free-brands-svg-icons";
 
 import "./footer.styles.scss";
 import { Link } from "react-router-dom";
+import {ReactComponent as Logo} from "../../assets/logo.svg";
 
 const Footer = () => (
   <div className="footer">
     <div className="grid">
-      <div className="grid-header">Next Level</div>
-      At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis
-      praesentium voluptatum deleniti atque corrupti quos dolores.
+      <div className="grid-header"></div>
+      <Link className='logo-container' to="/">
+        <Logo className='logo'/>
+      </Link>
     </div>
 
     <div className="grid">
@@ -79,7 +81,7 @@ const Footer = () => (
 
       <div className="item">12 34 56 78</div>
 
-      <div className="item">info@webringucook.com</div>
+      <div className="item">info@nextlevel.com</div>
 
       <div className="item">Guldbergsgade 29N, 2200 Copenhagen</div>
     </div>

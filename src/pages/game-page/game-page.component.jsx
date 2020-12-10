@@ -8,6 +8,7 @@ import {DeleteModal} from "../../components/game-delete/game-delete-modal.compon
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faBuilding, faCalendarDay, faClock, faPowerOff, faStar, faUsers} from "@fortawesome/free-solid-svg-icons";
 import YouTube from 'react-youtube-embed'
+import SocialFooter from "../../components/social-footer/social-footer.component";
 //import axios from "axios";
 
 class GamePage extends Component {
@@ -211,6 +212,7 @@ class GamePage extends Component {
                         </div>
                     </div>)
                 }
+                <SocialFooter/>
             </div>
         );
     }
