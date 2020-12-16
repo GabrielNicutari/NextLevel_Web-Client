@@ -169,7 +169,6 @@ class GamePage extends Component {
 
                                 <div className='game-description'>
                                     <YouTube className='youtube' id={link}/>
-                                    {/*{game.trailerUrl}*/}
                                 </div>
 
                                 {/*<div className='game-description'>*/}

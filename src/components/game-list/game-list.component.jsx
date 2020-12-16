@@ -10,8 +10,8 @@ const GameList = (props) => (
             <div className='preview'>
                 {
                     props.games
-                        .map(({id, ...otherGameProps}) => (
-                            <GameItem key={id} id={id} {...otherGameProps}/>
+                        .map((item) => (
+                            <GameItem key={item.id} item={item}/>
                         ))
                 }
             </div>
