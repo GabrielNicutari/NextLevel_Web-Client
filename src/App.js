@@ -55,7 +55,7 @@ class App extends Component {
   }
 
   render() {
-    console.log("something");
+    console.log("Environment variables are ignored for some reason");
     console.log(process.env.REACT_APP_NAME);
     console.log(process.env.REACT_APP_API_URL);
 
