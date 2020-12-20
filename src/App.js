@@ -55,6 +55,7 @@ class App extends Component {
   }
 
   render() {
+    console.log("something");
     console.log(process.env.REACT_APP_NAME);
     console.log(process.env.REACT_APP_API_URL);
 
