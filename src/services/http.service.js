@@ -1,7 +1,7 @@
 import axios from "axios";
 import { toast } from "react-toastify";
 
-axios.defaults.baseURL = "http://nextlevelserver-env.eba-6rp8py3s.us-east-1.elasticbeanstalk.com";
+axios.defaults.baseURL = "http://nextlevelserver-env.eba-qdp596c2.us-east-1.elasticbeanstalk.com/";
 
 axios.interceptors.response.use(null, (error) => {
     console.log("interceptor called");
